@@ -1,5 +1,3 @@
-
-
 export const SmallBottom = () => {
   return (
     <div className="bg-white rounded-[30px] shadow-[0px_1px_3px_0px_#cacaca] text-[#4a4a4a] text-[14px] w-[88%] mx-auto flex items-center justify-around h-[60px] relative top-[-80px]">
