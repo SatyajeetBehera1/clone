@@ -33,8 +33,9 @@ button{
       border:none;
       cursor: pointer;
       font-size: 13px;
+      margin-top:-5px;
       margin-right: 50px;
-      border-radius: 25px;
+      border-radius: 10px;
       background: linear-gradient(
         to right,
         #8fdcfa 0%,
