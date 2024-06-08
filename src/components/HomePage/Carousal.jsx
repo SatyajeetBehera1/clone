@@ -34,17 +34,37 @@ export const CarousalUI = () => {
                             className="indLinks"
                             style={{ borderBottom: offers === 0 ? "3px solid #008cff" : "" }}
                             onClick={() => setOffers(0)}
-                        >ALL OFFERS</p>
+                        >All Offers</p>
                         <p
                             className="indLinks"
-                            onClick={() => setOffers(1)}
                             style={{ borderBottom: offers === 1 ? "3px solid #008cff" : "" }}
-                        >FLIGHTS</p>
+                            onClick={() => setOffers(1)}
+                        >Bank Offers</p>
                         <p
                             className="indLinks"
                             onClick={() => setOffers(2)}
                             style={{ borderBottom: offers === 2 ? "3px solid #008cff" : "" }}
-                        >HOTELS</p>
+                        >Flights</p>
+                        <p
+                            className="indLinks"
+                            onClick={() => setOffers(3)}
+                            style={{ borderBottom: offers === 3 ? "3px solid #008cff" : "" }}
+                        >Hotels</p>
+                        <p
+                            className="indLinks"
+                            onClick={() => setOffers(4)}
+                            style={{ borderBottom: offers === 4 ? "3px solid #008cff" : "" }}
+                        >Holidays</p>
+                        <p
+                            className="indLinks"
+                            onClick={() => setOffers(5)}
+                            style={{ borderBottom: offers === 5 ? "3px solid #008cff" : "" }}
+                        >Trains</p>
+                        <p
+                            className="indLinks"
+                            onClick={() => setOffers(6)}
+                            style={{ borderBottom: offers === 6 ? "3px solid #008cff" : "" }}
+                        >Cabs</p>
                     </div>
                 </div>
                 {offers === 0 ?
