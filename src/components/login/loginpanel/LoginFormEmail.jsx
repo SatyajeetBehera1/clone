@@ -1,18 +1,20 @@
-import axios from "axios";
-import styled from 'styled-components';
-
+import axios from "axios"
+import styled from 'styled-components'
 const Style = styled.div`
-  .loginForm {
+.loginForm {
     display: flex;
     flex-direction: column;
     gap: 10px;
+  }
+  .z{
+    z-index:1001;
   }
   .acc-type {
     display: flex;
     justify-content: center;
     gap: 20px;
     padding: 7px;
-    border-radius: 50px;
+    border-radius: 51px;
     background-color: #fff;
     box-shadow: 0 1px 7px 0 rgb(0 0 0 / 30%);
     align-items: center;
@@ -33,13 +35,13 @@ const Style = styled.div`
     display: flex;
     width: 100%;
     align-items: center;
-    text-align: center;
+    text-align: center border;
+    font-weight: 600;
+    font-size: 14px;
     border: 0.2px solid grey;
     border-radius: 5px;
     justify-content: center;
     cursor: pointer;
-    font-weight: 600;
-    font-size: 14px;
   }
   .g-logo {
     width: 10%;
@@ -52,7 +54,8 @@ const Style = styled.div`
     font-size: 14px;
     color: grey;
   }
-  .other-option, .tc {
+  .other-option,
+  .tc {
     text-align: center;
     text-decoration: none;
   }
@@ -98,63 +101,79 @@ const Style = styled.div`
     font-size: 16px;
     width: 100%;
   }
-`;
-
+  
+`
 export const LoginForm = (props) => {
-  const { handleOtpStatus, handleChange, hashHandleChange, value } = props;
+
+  const { handleOtpStatus,handleChange,hashHandleChange,value } = props;
 
   const handleSubmit = (e) => {
+    
     e.preventDefault();
+    
+    if(value.phone.length === 10) {
 
-    axios.post("http://localhost:4000/login", {
-      email: value.email,
-      password: value.password,
-    }).then((res) => {
-      const hash = res.data.hash;
-      hashHandleChange(hash);
-    });
+      axios.post("http://localhost:4000/sendOTP",{
+        phone:`+91${value.phone}`,
 
-    handleOtpStatus();
+      }).then((res)=>{
+        const hash = res.data.hash;
+        hashHandleChange(hash);
+      })
+
+      handleOtpStatus();
+    }
+    
+    else{
+      alert("Invalid mobile number")
+      
+    }
+   
   };
 
   return (
     <Style>
       <div className="loginForm z">
+
         <div className="acc-type">
           <div className="active-login">PERSONAL ACCOUNT</div>
-          <div>MYBIZ ACCOUNT</div>
+          <div> MYBIZ ACCOUNT</div>
         </div>
-        <h1>Login/signup</h1>
+
+        <h1>Login/signup </h1>
+
         <form onSubmit={handleSubmit}>
+
           <div className="inp-wrap">
-            <label>Email</label>
+            <label>Enter Mobile Number</label>
+
             <div className="inp">
               <input
-                type="email"
-                onChange={handleChange('email')}
+                type="text"
+                onChange={handleChange('phone')}
                 placeholder=""
-                value={value.email}
+                minLength="10"
+                value={value.phone}
                 required
               />
             </div>
+
+            <p
+              className={
+                value.phone.length  === 10 ||  value.phone.length  === 0 ? "hide" : "indicate"
+              }
+            >
+              Please enter a 10 digit valid Mobile Number.
+            </p>
           </div>
-          <div className="inp-wrap">
-            <label>Password</label>
-            <div className="inp">
-              <input
-                type="password"
-                onChange={handleChange('password')}
-                placeholder=""
-                value={value.password}
-                required
-              />
-            </div>
-          </div>
+
           <div>
-            <input type="submit" className="cbtn" value="Submit" />
+            <input type="submit" className="cbtn" value="CONTINUE" />
           </div>
         </form>
+
         <p className="other-option">Or Login/Signup With</p>
+
         <div>
           <div className="google-signup">
             <span className="g-logo">

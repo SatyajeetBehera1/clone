@@ -28,7 +28,7 @@ const Style = styled.div`
     right: 0;
     width: 480px;
     height: auto;
-    min-height: 500px;
+    min-height: 600px;
     padding: 30px;
     min-width: 450px;
     border-radius: 10px;
