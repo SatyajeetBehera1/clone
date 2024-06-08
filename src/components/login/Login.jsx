@@ -26,8 +26,8 @@ const Style = styled.div`
   }
   .account {
 button{
-  min-width: 150px;
-      height: 30px;
+      min-width: 170px;
+      height: 50px;
       color: white;
       font-weight: 600;
       border:none;
