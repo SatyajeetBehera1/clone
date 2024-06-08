@@ -6,8 +6,7 @@ import TrainIcon from "@mui/icons-material/Train";
 import DirectionsBusFilledIcon from "@mui/icons-material/DirectionsBusFilled";
 import LocalTaxiIcon from "@mui/icons-material/LocalTaxi";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
-import DownhillSkiingIcon from "@mui/icons-material/DownhillSkiing";
-import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
+import LocalAtmIcon from '@mui/icons-material/LocalAtm';
 import {Icondivcss} from "./Icondivcss";
 export const Icondiv = () => {
   return (
@@ -69,11 +68,11 @@ export const Icondiv = () => {
         </div>
         <div>
           <span>
-            <FlightTakeoffIcon
+            <LocalAtmIcon
               style={{ fontSize: 40, padding: 4 }}
-            ></FlightTakeoffIcon>
+            ></LocalAtmIcon>
           </span>
-          <p>Charter flights</p>
+          <p>Insurance</p>
         </div>
        
       </div>

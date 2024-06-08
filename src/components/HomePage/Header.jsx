@@ -6,7 +6,7 @@ import TrainIcon from "@mui/icons-material/Train";
 import DirectionsBusFilledIcon from "@mui/icons-material/DirectionsBusFilled";
 import LocalTaxiIcon from "@mui/icons-material/LocalTaxi";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
-import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
+import LocalAtmIcon from '@mui/icons-material/LocalAtm';
 import styled from "styled-components";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -146,11 +146,11 @@ export const Header = () => {
           </div>
           <div>
             <span>
-              <FlightTakeoffIcon
+              <LocalAtmIcon
                 style={{ fontSize: 30, padding: 4 }}
-              ></FlightTakeoffIcon>
+              ></LocalAtmIcon>
             </span>
-            <p>Charter flights</p>
+            <p>Insurance</p>
           </div>
           
         </div>
