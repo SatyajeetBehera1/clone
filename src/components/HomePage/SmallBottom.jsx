@@ -27,8 +27,8 @@ export const SmallBottom = () => {
     </div>
     <div className="flex items-center w-full h-full gap-[10px] text-center border-l border-[#cacaca]">
       <img
-        className="ml-[20px]"
-        src="https://promos.makemytrip.com/Growth/Images/B2C/x/dt_tert_ng1.png"
+        className="ml-[20px] h-8"
+        src="	https://promos.makemytrip.com/images/myBiz/MICE/mice%20icon%20-%20square.png"
         alt=""
       />
       <p className="inline text-left leading-[14px]">Locations</p>
