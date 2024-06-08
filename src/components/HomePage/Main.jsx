@@ -30,15 +30,15 @@ export const Main = () => {
     popup.classList.toggle("active");
   };
   return (
-    <div>
+    <div >
       <Header></Header>
       <Navbar>
-        <div className="topdiv">
-          <img
-            className="laltain"
-            src="https://imgak.mmtcdn.com/pwa_v3/pwa_commons_assets/desktop/DiwaliLantern.webp"
+        <div className="topdiv ">
+          {/* <img
+            src="https://imgak.mmtcdn.com/pwa_v3/pwa_commons_assets/desktop/bg1.jpg"
             alt=""
-          />
+            className="laltain h-50 w-50"
+          /> */}
           <Link to="/">
             <img
               className="mmtlogo"

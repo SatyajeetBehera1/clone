@@ -6,7 +6,6 @@ import TrainIcon from "@mui/icons-material/Train";
 import DirectionsBusFilledIcon from "@mui/icons-material/DirectionsBusFilled";
 import LocalTaxiIcon from "@mui/icons-material/LocalTaxi";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
-import DownhillSkiingIcon from "@mui/icons-material/DownhillSkiing";
 import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
 import styled from "styled-components";
 import { useState } from "react";
@@ -153,14 +152,7 @@ export const Header = () => {
             </span>
             <p>Charter flights</p>
           </div>
-          <div>
-            <span>
-              <DownhillSkiingIcon
-                style={{ fontSize: 30, padding: 4 }}
-              ></DownhillSkiingIcon>
-            </span>
-            <p>Activities</p>
-          </div>
+          
         </div>
         <div className="login">
         <Login handleClick={handlePopup}/>

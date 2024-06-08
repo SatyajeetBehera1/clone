@@ -55,12 +55,8 @@ export const ConfirmOtp = (props) => {
     }).then((res)=>{
       alert("Login Success")
       handleNewUser(value.phone)
-      //window.location.reload()
-      
-      //console.log(res.data)
     }).catch((err)=>{
       alert(err.response.data.msg)
-     // console.error(err.response.data.msg)
     })
   };
 

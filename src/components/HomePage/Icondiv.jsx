@@ -75,14 +75,7 @@ export const Icondiv = () => {
           </span>
           <p>Charter flights</p>
         </div>
-        <div>
-          <span>
-            <DownhillSkiingIcon
-              style={{ fontSize: 40, padding: 4 }}
-            ></DownhillSkiingIcon>
-          </span>
-          <p>Activities</p>
-        </div>
+       
       </div>
     </Icondivcss>
   );

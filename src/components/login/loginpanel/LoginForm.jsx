@@ -6,7 +6,9 @@ const Style = styled.div`
     flex-direction: column;
     gap: 10px;
   }
-  
+  .z{
+    z-index:1001;
+  }
   .acc-type {
     display: flex;
     justify-content: center;
@@ -115,8 +117,6 @@ export const LoginForm = (props) => {
         phone:`+91${value.phone}`,
 
       }).then((res)=>{
-        console.log(res.data.otp)
-        //console.log(res);
         const hash = res.data.hash;
         hashHandleChange(hash);
       })
@@ -133,7 +133,7 @@ export const LoginForm = (props) => {
 
   return (
     <Style>
-      <div className="loginForm">
+      <div className="loginForm z">
 
         <div className="acc-type">
           <div className="active-login">PERSONAL ACCOUNT</div>
@@ -151,7 +151,7 @@ export const LoginForm = (props) => {
               <input
                 type="text"
                 onChange={handleChange('phone')}
-                placeholder="987*****21"
+                placeholder=""
                 minLength="10"
                 value={value.phone}
                 required

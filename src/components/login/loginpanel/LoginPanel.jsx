@@ -59,21 +59,6 @@ export const LoginPanel = ({ handleClick, handleUser }) => {
 
   const checkIsUserExist=(mob)=>{
 
-    console.log(mob)
-    //fetch user from database using mobile number
-    // let user = {
-    //   name:"Rahul yadav",
-    //   password:"rahul@123"
-    // }
-    // setFindUser(user)
-    // handleClick()
-    // setIsUserExist(true)
-
-    //if found user then  call handleuser(gotuser)
-    
-    
-    //set user false
-
     setIsUserExist(false)
     //
 
@@ -92,13 +77,11 @@ export const LoginPanel = ({ handleClick, handleUser }) => {
     setOtpSend(true);
   };
 
-// handling with user login inputs
     const handleChange = (input)=>(e)=>{
 
       setState({...state,[input]:e.target.value});
     }
   
-    //handling has status
     const hashHandleChange = (hash)=>{
       setState({...state, hash:hash});
     }
@@ -120,14 +103,14 @@ export const LoginPanel = ({ handleClick, handleUser }) => {
         (Auth.isAuthenticated()&& !isUserExist ) ? <UserForm handleNewUser={handleNewUser} />:otpSend ? (
           <ConfirmOtp
                 handleNewUser = {checkIsUserExist}
-                handleChange={handleChange}           // handling with user login inputs          
+                handleChange={handleChange}                  
                 value = {value}
           />
         ) :(
           <LoginForm 
           handleOtpStatus={handleOtpSend} 
-          handleChange={handleChange}           // handling with user login inputs
-          hashHandleChange={hashHandleChange}   //handling has status
+          handleChange={handleChange}     
+          hashHandleChange={hashHandleChange}
           value = {value}
           
           />

@@ -28,7 +28,7 @@ export const Fromto = ({handleChange}) => {
         </div>
         <div>
           <h3>TO</h3>
-          <select onChange={handleChange} name="to" id="">
+          <select onChange={handleChange} name="to" id="" >
             {text.map((e) => (
               <option value={e.IATA_code} key={e.IATA_code}>
                 {e.city_name}

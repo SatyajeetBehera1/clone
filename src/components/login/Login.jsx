@@ -92,7 +92,6 @@ export const Login = ({ handleClick}) => {
 
     axios.get("http://localhost:4000/logout").then((res)=>{
       console.log(res.data)
-      // window.location.reload();
     }).catch((err)=>{
       console.error(err.response)
     })
@@ -103,14 +102,12 @@ export const Login = ({ handleClick}) => {
     
     setUser(user)
     window.location.reload()
-    //set the login user here...
   }
   return (
     <Style>
       <div className="loginTrigger" onClick={(Auth.isAuthenticated())?null: handleClick}>
         {(Auth.isAuthenticated()) ? (        
           <div className="userLogged">
-            {/* <span className="login-logo">{(Auth.isAuthenticated()) ? user.name[0] : "My"}</span> */}
             <div className="white">Hi {user.name}</div>
             <button onClick={logOut} className="logout-btn">Logout</button>
           </div>
@@ -122,9 +119,7 @@ export const Login = ({ handleClick}) => {
       </div>
       <div id="popup">
         <LoginPanel
-          handleClick={handleClick}             // for popup 
-        //  handleStatus ={handleStatus}          // see is user login or not
-          handleUser={handleUser}               //setting user details
+          handleClick={handleClick}handleUser={handleUser}               
           />             
       </div>
     </Style>
