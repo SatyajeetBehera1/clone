@@ -4,7 +4,6 @@ export const FromtoLapcss = styled.div`
   height: 85px;
   width: 95%;
   margin: auto;
-  // border: 0.01em solid #d4d0d0;
   border-radius: 8px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -28,7 +27,7 @@ export const FromtoLapcss = styled.div`
   }
 
   .fromtodiv div {
-    border-right: 0.01em solid #d4d0d0;
+    // border-right: 0.01em solid #d4d0d0;
     height: 82%;
   }
 
@@ -59,7 +58,7 @@ export const FromtoLapcss = styled.div`
   }
 
   .fromtodiv2 div {
-    border-right: 0.01em solid #d4d0d0;
+    // border-right: 0.01em solid #d4d0d0;
     height: 89%;
   }
 
@@ -84,7 +83,6 @@ export const Fromtocss = styled.div`
   height: auto;
   width: 95%;
   margin: auto;
-  border: 1px solid #d4d0d0;
   border-radius: 8px;
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
