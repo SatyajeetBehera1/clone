@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const CarousalU = styled.div`
   :root {
@@ -46,13 +46,12 @@ export const CarousalU = styled.div`
     box-shadow: 0 2px 4px 4px rgb(10 10 10 / 3%);
     cursor: pointer;
     top: -30px; /* Position them at the top */
-    border-radius:5px;
+    border-radius: 5px;
   }
 
   .left-arrow {
     right: 80px; /* Adjust for the left arrow */
-    z-index:1;
-    
+    z-index: 1;
   }
 
   .right-arrow {
@@ -67,12 +66,12 @@ export const CarousalU = styled.div`
 
     .left-arrow {
       left: 0;
-      z-index:1;
+      z-index: 1;
     }
 
     .right-arrow {
       right: 0;
-      z-index:1;
+      z-index: 1;
     }
   }
 
