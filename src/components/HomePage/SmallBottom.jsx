@@ -1,6 +1,6 @@
 export const SmallBottom = () => {
   return (
-    <div className="bg-white rounded-[30px] shadow-[0px_1px_3px_0px_#cacaca] text-[#4a4a4a] text-[14px] w-[88%] mx-auto flex items-center justify-around h-[60px] relative top-[-80px]">
+    <div className="hidden md:flex bg-white rounded-[30px] shadow-[0px_1px_3px_0px_#cacaca] text-[#4a4a4a] text-[14px] w-[88%] mx-auto flex items-center justify-around h-[60px] relative top-[-80px]">
     <div className="flex items-center w-full h-full gap-[10px] text-center first:border-none border-r border-gray-300">
       <img
         className="ml-[20px]"

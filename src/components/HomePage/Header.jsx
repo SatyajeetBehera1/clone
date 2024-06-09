@@ -6,7 +6,7 @@ import TrainIcon from "@mui/icons-material/Train";
 import DirectionsBusFilledIcon from "@mui/icons-material/DirectionsBusFilled";
 import LocalTaxiIcon from "@mui/icons-material/LocalTaxi";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
-import LocalAtmIcon from '@mui/icons-material/LocalAtm';
+import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 import styled from "styled-components";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -66,18 +66,7 @@ const Icondivcss = styled.div`
   /* Media query for mobile devices */
   @media only screen and (max-width: 768px) {
     .icondiv {
-      flex-direction: column;
-      align-items: center;
-    }
-    .icons {
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-    }
-    .login {
-      position: relative;
-      top: 0px;
-      left: 0px;
+      display: none; /* Hide the icons container on smaller screens */
     }
   }
 `;
@@ -101,7 +90,12 @@ export const Header = () => {
       <div className={nav ? "icondiv" : "disnone"}>
         <div className="imgdiv">
           <Link to="/">
-            <img src={"https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/header/logo@2x.png"} alt="Logo" />
+            <img
+              src={
+                "https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/header/logo@2x.png"
+              }
+              alt="Logo"
+            />
           </Link>
         </div>
         <div className="icons">
@@ -119,7 +113,9 @@ export const Header = () => {
           </div>
           <div>
             <span>
-              <HomeWorkIcon style={{ fontSize: 30, padding: 4 }}></HomeWorkIcon>
+              <HomeWorkIcon
+                style={{ fontSize: 30, padding: 4 }}
+              ></HomeWorkIcon>
             </span>
             <p>Homestays</p>
           </div>
@@ -169,10 +165,10 @@ export const Header = () => {
             </span>
             <p>Insurance</p>
           </div>
+        </div>
           <div className="login">
             <Login handleClick={handlePopup} />
           </div>
-        </div>
       </div>
     </Icondivcss>
   );

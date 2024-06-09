@@ -71,7 +71,7 @@ export const CarousalUI = () => {
     nextArrow: <Arrow direction="next" />
   };
 
-  const sliders = [slider0, slider1, slider2];
+  const sliders = [slider0, slider1, slider2, slider0];
 
   return (
     <CarousalU>
