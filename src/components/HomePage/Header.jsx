@@ -74,10 +74,6 @@ const Icondivcss = styled.div`
       align-items: center;
       width: 100%;
     }
-    .imgdiv {
-      width: 100%;
-      justify-content: center;
-    }
     .login {
       position: relative;
       top: 0px;

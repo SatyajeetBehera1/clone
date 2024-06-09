@@ -1,16 +1,15 @@
-import styled from 'styled-components'
-export const CarousalU= styled.div`
-:root {
+import styled from 'styled-components';
+
+export const CarousalU = styled.div`
+  :root {
     --color-primary: #008cff;
     --color-btn-primary-bg: linear-gradient(93deg, #53b2fe, #065af3);
     --color-btn-primary-text: #fff;
     --color-btn: #008cff;
     --btn-border-radius: 4px;
-}
+  }
 
-
-
-.sliderContainer {
+  .sliderContainer {
     width: 100%;
     margin: auto;
     position: relative;
@@ -18,200 +17,204 @@ export const CarousalU= styled.div`
     padding: 30px 50px 25px 50px;
     border-radius: 10px;
     box-sizing: border-box;
-}
+  }
 
-.each-slide>div {
+  .each-slide > div {
     padding: 10px;
     margin: 20px 10px 5px 10px;
     border-radius: 7px;
-}
+  }
 
-.homeTitle {
+  .homeTitle {
     font-size: 25px;
-}
+  }
 
-.homeSubTitle {
+  .homeSubTitle {
     font-size: 90px;
     font-weight: 600;
     color: white;
-}
+  }
 
-.left-arrow {
+  .arrow {
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    right: 72px;
-    top: 30px;
     width: 30px;
     height: 30px;
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
     background-color: white;
     box-shadow: 0 2px 4px 4px rgb(10 10 10 / 3%);
-}
-
-.right-arrow {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    right: 40px;
-    top: 30px;
-    width: 30px;
-    height: 30px;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    background-color: white;
-    box-shadow: 0 2px 4px 4px rgb(10 10 10 / 3%);
-}
-
-.left-arrow:hover {
     cursor: pointer;
-}
+    top: -30px; /* Position them at the top */
+    border-radius:5px;
+  }
 
-.right-arrow:hover {
-    cursor: pointer;
-}
+  .left-arrow {
+    right: 80px; /* Adjust for the left arrow */
+    z-index:1;
+    
+  }
 
-.ind-slide {
+  .right-arrow {
+    right: 40px; /* Adjust for the right arrow */
+  }
+
+  @media (max-width: 1023px) {
+    .arrow {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .left-arrow {
+      left: 0;
+      z-index:1;
+    }
+
+    .right-arrow {
+      right: 0;
+      z-index:1;
+    }
+  }
+
+  .ind-slide {
     display: flex;
     flex-direction: row;
-    background-color: "#fff";
+    background-color: #fff;
     box-shadow: 0 2px 5px 2px rgb(10 10 10 / 10%);
-}
+  }
 
-.sliderTitle {
+  .sliderTitle {
     display: flex;
-}
+  }
 
-.sliderLinks {
+  .sliderLinks {
     margin-left: 20px;
     display: flex;
-}
+  }
 
-.indLinks {
+  .indLinks {
     margin: 0px 10px;
-}
+  }
 
-.indLinks:hover {
+  .indLinks:hover {
     cursor: pointer;
-}
+  }
 
-.imageSection {
+  .imageSection {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-}
+  }
 
-.imageSection img {
+  .imageSection img {
     width: 150px;
     height: 85%;
     border-radius: 5px;
-}
+  }
 
-.imageSection p {
+  .imageSection p {
     font-size: 12px;
-    color: #9B9B9B;
-}
+    color: #9b9b9b;
+  }
 
-.contentSection {
+  .contentSection {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding-left: 20px;
-}
+  }
 
-.offerCardTitle {
+  .offerCardTitle {
     font-size: 12px;
-    color: #9B9B9B;
+    color: #9b9b9b;
     margin: 0px 0px 5px;
-}
+  }
 
-.offerCardSubTitle {
+  .offerCardSubTitle {
     font-size: 18px;
     font-weight: bold;
     margin: 0px 0px 10px;
-}
+  }
 
-.divider {
+  .divider {
     width: 40px;
     height: 1px;
     background-color: #eb2026;
     margin: 0px 0px 10px;
-}
+  }
 
-.offerCardOffers {
+  .offerCardOffers {
     font-size: 14px;
-    color: #9B9B9B;
-}
+    color: #9b9b9b;
+  }
 
-.knowMore {
+  .knowMore {
     display: flex;
     justify-content: end;
-}
+  }
 
-.knowMore p {
+  .knowMore p {
     font-size: 14px;
     color: #008cff;
     font-weight: bold;
-}
+  }
 
-.knowMore p:hover {
+  .knowMore p:hover {
     cursor: pointer;
-}
+  }
 
-@media (min-width:768px) and (max-width:1023px) {
+  @media (min-width: 768px) and (max-width: 1023px) {
     .contentSection {
-       width: 100%;
+      width: 100%;
     }
-}
+  }
 
-@media (min-width:575px) and (max-width:767px) {
+  @media (min-width: 575px) and (max-width: 767px) {
     .contentSection {
-       width: 100%;
+      width: 100%;
     }
 
     .offerCardTitle {
-        font-size: 10px;
+      font-size: 10px;
     }
-    
-    .offerCardSubTitle {
-        font-size: 15px;
-    }
-    
-    .offerCardOffers {
-        font-size: 12px;
-    }
-    
-    .knowMore p {
-        font-size: 12px;
-    }
-}
 
-@media only screen and (max-width:574px) {
+    .offerCardSubTitle {
+      font-size: 15px;
+    }
+
+    .offerCardOffers {
+      font-size: 12px;
+    }
+
+    .knowMore p {
+      font-size: 12px;
+    }
+  }
+
+  @media only screen and (max-width: 574px) {
     .contentSection {
-       width: 100%;
+      width: 100%;
     }
 
     .sliderContainer {
-        padding: 30px 10px 25px 10px;
+      padding: 30px 10px 25px 10px;
     }
 
     .offerCardTitle {
-        font-size: 10px;
+      font-size: 10px;
     }
-    
+
     .offerCardSubTitle {
-        font-size: 15px;
+      font-size: 15px;
     }
-    
+
     .offerCardOffers {
-        font-size: 12px;
+      font-size: 12px;
     }
-    
+
     .knowMore p {
-        font-size: 12px;
+      font-size: 12px;
     }
-}`
+  }
+`;

@@ -62,7 +62,7 @@ export const Main = () => {
         <div className="topdiv">
           <Link to="/">
             <img
-              className="mmtlogo sm:w-24 md:w-32 lg:w-40 xl:w-48"
+              className="mmtlogo "
               src="https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/header/mmtLogoWhite.png"
               alt="Logo"
             />
@@ -94,7 +94,7 @@ export const Main = () => {
         </div>
         <Bookingcss>
           <Icondiv className="icondiv"></Icondiv>
-          <div className="checkboxdiv">
+          <div className="checkboxdiv hide-on-mobile">
             <div>
               <input type="checkbox" />
               <label>One Way</label>

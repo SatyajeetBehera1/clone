@@ -40,7 +40,7 @@ export const Icondivcss = styled.div`
   /* Adjust layout for mobile */
   @media (max-width: 767px) {
     .icondiv > div {
-      width: calc(20% - 20px); /* Adjust as needed */
+      width: calc(33.33% - 20px); /* Adjust as needed */
       margin: 10px;
     }
     .icondiv{
