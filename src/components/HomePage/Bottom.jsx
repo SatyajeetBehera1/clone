@@ -7,7 +7,7 @@ export const Bottom = () => {
       <div className="div1">
         <div className="m-8">
           <div class="p-5">
-            <h3 class="text-xl font-bold text-gray-900">PRODUCT OFFERING</h3>
+            <h2 class="text-xl font-bold text-gray-900">PRODUCT OFFERING</h2>
             <ul class="m-0 p-0 flex flex-wrap">
               <li class="inline text-xs m-1">Flights</li>
               <li class="inline text-xs m-1">International Flights</li>
@@ -47,7 +47,7 @@ export const Bottom = () => {
             </ul>
           </div>
           <div class="p-5">
-            <h3 class="text-xl font-bold text-gray-900">MAKEMYTRIP</h3>
+            <h2 class="text-xl font-bold text-gray-900">MAKEMYTRIP</h2>
             <ul class="m-0 p-0 flex flex-wrap list-none">
               <li class="text-xs m-1">About Us</li>
               <li class="text-xs m-1">Investor Relations</li>
@@ -71,7 +71,7 @@ export const Bottom = () => {
             </ul>
           </div>
           <div class="p-5">
-            <h3 class="text-xl font-bold text-gray-900">ABOUT THIS SITE</h3>
+            <h2 class="text-xl font-bold text-gray-900">ABOUT THIS SITE</h2>
             <ul class="m-0 p-0 flex flex-wrap list-none">
               <li class="text-xs m-1">Customer Support</li>
               <li class="text-xs m-1">Payment Security</li>
@@ -131,9 +131,9 @@ export const Bottom = () => {
             </ul>
           </div>
           <div class="p-5">
-            <h3 class="text-xl font-bold text-gray-900">
+            <h2 class="text-xl font-bold text-gray-900">
               TOP INTERNATIONAL HOTELS
-            </h3>
+            </h2>
             <ul class="m-0 p-0 flex flex-wrap list-none">
               <li class="text-xs m-1">Adaaran Club Rannalhi</li>
               <li class="text-xs m-1">Marina Bay Sands Singapore</li>
@@ -172,7 +172,7 @@ export const Bottom = () => {
             </ul>
           </div>
           <div class="p-5">
-            <h3 class="text-xl font-bold text-gray-900">QUICK LINKS</h3>
+            <h2 class="text-xl font-bold text-gray-900">QUICK LINKS</h2>
             <ul class="m-0 p-0 flex flex-wrap list-none">
               <li class="text-xs m-1">Delhi Chennai Flights</li>
               <li class="text-xs m-1">Delhi Mumbai Flights</li>
@@ -209,7 +209,7 @@ export const Bottom = () => {
             </ul>
           </div>
           <div class="p-5">
-            <h3 class="text-xl font-bold text-gray-900">IMPORTANT LINKS</h3>
+            <h2 class="text-xl font-bold text-gray-900">IMPORTANT LINKS</h2>
             <ul className="m-0 p-0 flex flex-wrap list-none">
               <li class="text-xs m-1">Cheap Flights</li>
               <li class="text-xs m-1">Flight Status</li>
@@ -241,9 +241,9 @@ export const Bottom = () => {
               <li class="text-xs m-1">UK</li>
               <li class="text-xs m-1">Oman</li>
             </ul>
-            <h3 class="text-xl font-bold text-gray-900 mt-4">
+            <h2 class="text-xl font-bold text-gray-900 mt-4">
               CORPORATE TRAVEL
-            </h3>
+            </h2>
             <ul className="m-0 p-0 flex flex-wrap list-none">
               <li class="text-xs m-1">Corporate Travel</li>
               <li class="text-xs m-1">Corporate Hotel Booking</li>
