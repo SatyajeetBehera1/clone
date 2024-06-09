@@ -80,7 +80,7 @@ export const CarousalUI = () => {
           <div className='sliderTitle'>
             <h2>Offers</h2>
             <div className='sliderLinks mt-6'>
-              {["All Offers", "Flights", "Trains", "Cabs"].map((label, index) => (
+              {["Holiday", "Flights", "Trains", "Cabs"].map((label, index) => (
                 <p
                   key={index}
                   className="indLinks"
