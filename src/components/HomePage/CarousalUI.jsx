@@ -108,7 +108,7 @@ export const CarousalU = styled.div`
   }
 
   .imageSection img {
-    width: 150px;
+    width: 90px;
     height: 85%;
     border-radius: 5px;
   }

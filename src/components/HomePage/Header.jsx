@@ -61,7 +61,7 @@ const Icondivcss = styled.div`
   .login {
     position: relative;
     top: 10px;
-    left: 150px;
+    left: 50px;
   }
   /* Media query for mobile devices */
   @media only screen and (max-width: 768px) {
