@@ -36,4 +36,7 @@ export const Bookingcss = styled.div`
       }
     }
   }
+      @media (max-width: 767px) {
+      height:500px;
+  }
 `;

@@ -54,6 +54,7 @@ export const Navbar = styled.div`
     text-decoration: none;
   }
   @media (max-width: 767px) {
+  height:650px;
     .mmtlogo {
       position: absolute;
       left: 70px;

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Fromtocss = styled.div`
+export const FromtoLapcss = styled.div`
   height: 85px;
   width: 95%;
   margin: auto;
@@ -77,3 +77,78 @@ export const Fromtocss = styled.div`
     text-overflow: '';
   }
 `
+
+
+
+export const Fromtocss = styled.div`
+  height: auto;
+  width: 95%;
+  margin: auto;
+  border: 1px solid #d4d0d0;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .fromtodiv,
+  .dateDiv,
+  .travelClass {
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 18px;
+  }
+
+  select,
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  select {
+    background-color: #f9f9f9;
+  }
+
+  input[type="date"] {
+    background-color: #f9f9f9;
+  }
+
+  .travelClass select {
+    width: calc(50% - 5px);
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .row div {
+    width: 48%;
+  }
+
+  @media (max-width: 767px) {
+    .fromtodiv,
+    .dateDiv,
+    .travelClass {
+      margin-bottom: 10px;
+    }
+
+    .row div {
+      width: 100%;
+    }
+
+    .row {
+      flex-direction: column;
+    }
+
+    input[type="date"],
+    select {
+      width: calc(100% - 22px);
+    }
+  }
+`;
