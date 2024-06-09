@@ -9,7 +9,6 @@ import CreditCardIcon from "@mui/icons-material/CreditCard";
 import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 import styled from "styled-components";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { Login } from "../login/Login";
 
 const Icondivcss = styled.div`
@@ -29,44 +28,14 @@ const Icondivcss = styled.div`
       flex-direction: row;
       justify-content: space-around;
       width: 60%;
-      p {
-        padding: 0px;
-        margin: -6px;
-        color: #555454;
-        font-size: 11px;
-      }
-      span {
-        color: #a3a3a3;
-        cursor: pointer;
-      }
-      span:hover {
-        color: #2db0fc;
-      }
-      div:hover {
-        color: #2db0fc;
-      }
     }
   }
   .disnone {
     display: none;
   }
-  .imgdiv {
-    position: relative;
-    top: 10px;
-    left: 0px;
-    img {
-      width: 50%;
-    }
-  }
-  .login {
-    position: relative;
-    top: 10px;
-    left: 50px;
-  }
-  /* Media query for mobile devices */
   @media only screen and (max-width: 768px) {
     .icondiv {
-      display: none; /* Hide the icons container on smaller screens */
+      display: none;
     }
   }
 `;
@@ -88,87 +57,80 @@ export const Header = () => {
   return (
     <Icondivcss>
       <div className={nav ? "icondiv" : "disnone"}>
-        <div className="imgdiv">
-          <Link to="/">
-            <img
-              src={
-                "https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/header/logo@2x.png"
-              }
-              alt="Logo"
-            />
-          </Link>
+        <div className="relative top-[10px] left-[0px]">
+          <img
+            src="https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/header/logo@2x.png"
+            alt="Logo"
+            className="w-1/2"
+          />
         </div>
         <div className="icons">
           <div>
-            <span>
+            <span className="hover:text-blue-500 cursor-pointer text-[#a3a3a3]">
               <FlightIcon style={{ fontSize: 30, padding: 4 }}></FlightIcon>
             </span>
-            <p>Flights</p>
+            <p className="p-0 -m-[-6px] text-[#555454] text-xs">Flights</p>
           </div>
           <div>
-            <span>
+            <span className="hover:text-blue-500 cursor-pointer text-[#a3a3a3]">
               <HotelIcon style={{ fontSize: 30, padding: 4 }}></HotelIcon>
             </span>
-            <p>Hotels</p>
+            <p className="p-0 -m-[-6px] text-[#555454] text-xs">Hotels</p>
           </div>
           <div>
-            <span>
-              <HomeWorkIcon
-                style={{ fontSize: 30, padding: 4 }}
-              ></HomeWorkIcon>
+            <span className="hover:text-blue-500 cursor-pointer text-[#a3a3a3]">
+              <HomeWorkIcon style={{ fontSize: 30, padding: 4 }}></HomeWorkIcon>
             </span>
-            <p>Homestays</p>
+            <p className="p-0 -m-[-6px] text-[#555454] text-xs">Homestays</p>
           </div>
           <div>
-            <span>
+            <span className="hover:text-blue-500 cursor-pointer text-[#a3a3a3]">
               <HolidayVillageIcon
                 style={{ fontSize: 30, padding: 4 }}
               ></HolidayVillageIcon>
             </span>
-            <p>Hoiday packages</p>
+            <p className="p-0 -m-[-6px] text-[#555454] text-xs">Hoiday packages</p>
           </div>
           <div>
-            <span>
+            <span className="hover:text-blue-500 cursor-pointer text-[#a3a3a3]">
               <TrainIcon style={{ fontSize: 30, padding: 4 }}></TrainIcon>
             </span>
-            <p>Trains</p>
+            <p className="p-0 -m-[-6px] text-[#555454] text-xs">Trains</p>
           </div>
           <div>
-            <span>
+            <span className="hover:text-blue-500 cursor-pointer text-[#a3a3a3]">
               <DirectionsBusFilledIcon
                 style={{ fontSize: 30, padding: 4 }}
               ></DirectionsBusFilledIcon>
             </span>
-            <p>Buses</p>
+            <p className="p-0 -m-[-6px] text-[#555454] text-xs">Buses</p>
           </div>
           <div>
-            <span>
+            <span className="hover:text-blue-500 cursor-pointer text-[#a3a3a3]">
               <LocalTaxiIcon
                 style={{ fontSize: 30, padding: 4 }}
               ></LocalTaxiIcon>
-            </span>
-            <p>Cabs</p>
+            </span >
+            <p className="p-0 -m-[-6px] text-[#555454] text-xs">Cabs</p>
           </div>
           <div>
-            <span>
+            <span className="hover:text-blue-500 cursor-pointer text-[#a3a3a3]">
               <CreditCardIcon
                 style={{ fontSize: 30, padding: 4 }}
               ></CreditCardIcon>
             </span>
-            <p>Visa</p>
+            <p className="p-0 -m-[-6px] text-[#555454] text-xs">Visa</p>
           </div>
           <div>
-            <span>
-              <LocalAtmIcon
-                style={{ fontSize: 30, padding: 4 }}
-              ></LocalAtmIcon>
+            <span className="hover:text-blue-500 cursor-pointer text-[#a3a3a3]">
+              <LocalAtmIcon style={{ fontSize: 30, padding: 4 }}></LocalAtmIcon>
             </span>
-            <p>Insurance</p>
+            <p className="p-0 -m-[-6px] text-[#555454] text-xs">Insurance</p>
           </div>
         </div>
-          <div className="login">
-            <Login handleClick={handlePopup} />
-          </div>
+        <div className="relative top-3 left-10 ">
+          <Login handleClick={handlePopup} />
+        </div>
       </div>
     </Icondivcss>
   );

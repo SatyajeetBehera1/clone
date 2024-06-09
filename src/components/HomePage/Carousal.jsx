@@ -25,17 +25,17 @@ const SlideContent = ({ item }) => (
         <div className="ind-slide">
           <div className="imageSection">
             <img src={item.thumbnail_image} alt="" />
-            <p>T&C's Apply</p>
+            <p className="text-xs text-gray-500">T&C's Apply</p>
           </div>
           <div className="contentSection">
             <div>
               <p className="offerCardTitle">{item.title}</p>
               <p className="offerCardSubTitle">{item.subTitle}</p>
-              <div className="divider" />
-              <p className="offerCardOffers">{item.offer}</p>
+              <div className="divider w-40 h-1 bg-red-500"></div>
+              <p className="offerCardOffers text-sm text-gray-500">{item.offer}</p>
             </div>
             <div className="knowMore">
-              <p>KNOW MORE</p>
+              <p className="text-sm font-bold text-blue-500">KNOW MORE</p>
             </div>
           </div>
         </div>
@@ -76,15 +76,14 @@ export const CarousalUI = () => {
   return (
     <CarousalU>
       <div className='homeContainer bg-white m-10 rounded-lg'>
-        <div className='sliderContainer'>
+        <div className='sliderContainer p-5'>
           <div className='sliderTitle'>
-            <h2>Offers</h2>
-            <div className='sliderLinks mt-6'>
+            <h2 className="text-xl font-bold">Offers</h2>
+            <div className='sliderLinks mt-6 flex'>
               {["Holiday", "Flights", "Trains", "Cabs"].map((label, index) => (
                 <p
                   key={index}
-                  className="indLinks"
-                  style={{ borderBottom: offers === index ? "3px solid #008cff" : "" }}
+                  className={`indLinks cursor-pointer ${offers === index ? "border-b-2 border-blue-500" : ""}`}
                   onClick={() => setOffers(index)}
                 >
                   {label}

@@ -27,7 +27,6 @@ export const FromtoLapcss = styled.div`
   }
 
   .fromtodiv div {
-    // border-right: 0.01em solid #d4d0d0;
     height: 82%;
   }
 

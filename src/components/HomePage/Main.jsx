@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Navbar } from "./Navbar";
 import { Smallbutton } from "./Smallbutton";
 import BusinessIcon from "@mui/icons-material/Business";
@@ -34,26 +34,6 @@ export const Main = () => {
     popup.classList.toggle("active");
   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 767) {
-        const elements = document.querySelectorAll(".hide-on-mobile");
-        elements.forEach((element) => (element.style.display = "none"));
-      } else {
-        const elements = document.querySelectorAll(".hide-on-mobile");
-        elements.forEach((element) => (element.style.display = ""));
-      }
-    };
-
-    // Initial check
-    handleResize();
-
-    // Add resize event listener
-    window.addEventListener("resize", handleResize);
-
-    // Cleanup event listener on component unmount
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   return (
     <div>
