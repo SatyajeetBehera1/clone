@@ -1,8 +1,9 @@
 import axios from "axios";
 import styled from 'styled-components';
+import { useState } from 'react';
 
 const Style = styled.div`
-  .loginForm {
+  .signupForm {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -23,7 +24,7 @@ const Style = styled.div`
   .acc-type > div {
     width: 50%;
   }
-  .active-login {
+  .active-signup {
     color: white;
     background: blue;
     padding: 5px 25px;
@@ -100,61 +101,82 @@ const Style = styled.div`
   }
 `;
 
-export const LoginForm = (props) => {
-  const { handleOtpStatus, handleChange, hashHandleChange, value } = props;
+export const SignupPage = (props) => {
+  const { handleChange, handleSubmit, value } = props;
+  const [error, setError] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    axios.post("http://localhost:4000/login", {
-      email: value.email,
-      password: value.password,
-    }).then((res) => {
-      const hash = res.data.hash;
-      hashHandleChange(hash);
-    });
-
-    handleOtpStatus();
+    try {
+      await axios.post("http://localhost:4000/signup", {
+        name: value.name,
+        email: value.email,
+        password: value.password,
+      });
+      handleSubmit();
+    } catch (error) {
+      setError('Signup failed. Please check your inputs and try again.');
+    }
   };
 
   return (
     <Style>
-      <div className="loginForm z">
+      <div className="signupForm">
         <div className="acc-type">
-          <div className="active-login">PERSONAL ACCOUNT</div>
+          <div className="active-signup">PERSONAL ACCOUNT</div>
           <div>MYBIZ ACCOUNT</div>
         </div>
-        <h1>Login/signup</h1>
-        <form onSubmit={handleSubmit}>
+        <h1>Signup</h1>
+        <form onSubmit={handleFormSubmit}>
           <div className="inp-wrap">
-            <label>Email</label>
+            <label htmlFor="name">Name</label>
             <div className="inp">
               <input
+                id="name"
+                type="text"
+                onChange={handleChange('name')}
+                placeholder=""
+                value={value.name}
+                required
+                aria-label="Name"
+              />
+            </div>
+          </div>
+          <div className="inp-wrap">
+            <label htmlFor="email">Email</label>
+            <div className="inp">
+              <input
+                id="email"
                 type="email"
                 onChange={handleChange('email')}
                 placeholder=""
                 value={value.email}
                 required
+                aria-label="Email"
               />
             </div>
           </div>
           <div className="inp-wrap">
-            <label>Password</label>
+            <label htmlFor="password">Password</label>
             <div className="inp">
               <input
+                id="password"
                 type="password"
                 onChange={handleChange('password')}
                 placeholder=""
                 value={value.password}
                 required
+                aria-label="Password"
               />
             </div>
           </div>
+          {error && <p className="indicate">{error}</p>}
           <div>
             <input type="submit" className="cbtn" value="Submit" />
           </div>
         </form>
-        <p className="other-option">Or Login/Signup With Google</p>
+        <p className="other-option">Or Signup With Google</p>
         <div>
           <div className="google-signup">
             <span className="g-logo">
@@ -163,7 +185,7 @@ export const LoginForm = (props) => {
                 alt="google-logo"
               />
             </span>
-            <span>Login with Google</span>
+            <span>Signup with Google</span>
           </div>
         </div>
         <p className="tc">

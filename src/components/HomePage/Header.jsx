@@ -11,6 +11,7 @@ import styled from "styled-components";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Login } from "../login/Login";
+
 const Icondivcss = styled.div`
   .icondiv {
     height: 60px;
@@ -28,7 +29,6 @@ const Icondivcss = styled.div`
       flex-direction: row;
       justify-content: space-around;
       width: 60%;
-
       p {
         padding: 0px;
         margin: -6px;
@@ -58,11 +58,32 @@ const Icondivcss = styled.div`
       width: 50%;
     }
   }
-.login{
-  position: relative;
-  top: 10px;
-  left: 150px;
-}
+  .login {
+    position: relative;
+    top: 10px;
+    left: 150px;
+  }
+  /* Media query for mobile devices */
+  @media only screen and (max-width: 768px) {
+    .icondiv {
+      flex-direction: column;
+      align-items: center;
+    }
+    .icons {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    .imgdiv {
+      width: 100%;
+      justify-content: center;
+    }
+    .login {
+      position: relative;
+      top: 0px;
+      left: 0px;
+    }
+  }
 `;
 
 export const Header = () => {
@@ -152,10 +173,9 @@ export const Header = () => {
             </span>
             <p>Insurance</p>
           </div>
-          
-        </div>
-        <div className="login">
-        <Login handleClick={handlePopup}/>
+          <div className="login">
+            <Login handleClick={handlePopup} />
+          </div>
         </div>
       </div>
     </Icondivcss>

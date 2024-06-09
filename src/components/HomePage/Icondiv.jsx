@@ -28,7 +28,7 @@ export const Icondiv = () => {
           <span>
             <HomeWorkIcon style={{ fontSize: 40, padding: 4 }}></HomeWorkIcon>
           </span>
-          <p>Homestays</p>
+          <p>Home</p>
         </div>
         <div>
           <span>
@@ -36,7 +36,7 @@ export const Icondiv = () => {
               style={{ fontSize: 40, padding: 4 }}
             ></HolidayVillageIcon>
           </span>
-          <p>Hoiday packages</p>
+          <p>Hoiday</p>
         </div>
         <div>
           <span>

@@ -1,6 +1,8 @@
-import 'react-slideshow-image/dist/styles.css'
+import React from 'react';
+import 'react-slideshow-image/dist/styles.css';
 import { Slide } from "react-slideshow-image";
-import {Smallslide} from './Smallslide'
+import { Smallslide } from './Smallslide';
+
 export const MultipleSlidesExample = () => {
   const properties = {
     duration: 2000,
@@ -11,22 +13,25 @@ export const MultipleSlidesExample = () => {
     transitionDuration: 400,
     infinite: true,
   };
+  if (window.innerWidth <= 768) { // Adjust the breakpoint according to your needs
+    properties.slidesToShow = 1;
+  } else {
+    properties.slidesToShow = 3;
+  }
 
   return (
-    <div>
-      <div className='m-7'>
-        <Slide {...properties}>
-          <div><Smallslide para={'Students Special Helpline: Call 01244628747 '} image={"https://promos.makemytrip.com/notification/xhdpi/Vande-Flight-10072020.png"}/></div>
-          <div><Smallslide para={'We are now available in हिंदी!'} image={"https://promos.makemytrip.com/Growth/Images/B2C/2x/language1@2x_20210901.png"}/></div>
-          <div><Smallslide para={'Many international destinations open for Indians now'} image={"https://promos.makemytrip.com/notification/xhdpi/Vande-Flight-10072020.png"}/></div>
-          <div><Smallslide para={'Going abroad for education, employment or the Olympics?'} image={"https://promos.makemytrip.com/notification/xhdpi/Vande-Flight-10072020.png"}/></div>
-          <div><Smallslide para={'Call 01244628747 for international booking... '} image={"https://promos.makemytrip.com/notification/xhdpi/Vande-Flight-10072020.png"}/></div>
-          <div><Smallslide para={'Insurance made easy – Acko'} image={"	https://tripmoneycmsimgak.mmtcdn.com/img/Acko_1_a95a85f8c1.png"}/></div>
-          <div><Smallslide para={'Check out our Indian Travel Trends Report.'} image={"	https://promos.makemytrip.com/Growth/Images/B2C/Uncompressed/Artboard_travRep.png"}/></div>
-          <div><Smallslide para={'Finding Indian Food just got easier! '} image={"	https://promos.makemytrip.com/images/CDN_upload/indiannessapphome2.png"}/></div>
-          <div><Smallslide para={'Karo Acchi Sehat Ka Iraada'} image={"https://tripmoneycmsimgak.mmtcdn.com/img/abhi_1_223c8a2989.png"}/></div>
-        </Slide>
-      </div>
+    <div className="m-7">
+      <Slide {...properties}>
+        <div className="w-1/3 p-2"><Smallslide para={'Students Special Helpline: Call 01244628747 '} image={"https://promos.makemytrip.com/notification/xhdpi/Vande-Flight-10072020.png"} /></div>
+        <div className="w-1/3 p-2"><Smallslide para={'We are now available in हिंदी!'} image={"https://promos.makemytrip.com/Growth/Images/B2C/2x/language1@2x_20210901.png"} /></div>
+        <div className="w-1/3 p-2"><Smallslide para={'Many international destinations open for Indians now'} image={"https://promos.makemytrip.com/notification/xhdpi/Vande-Flight-10072020.png"} /></div>
+        <div className="w-1/3 p-2"><Smallslide para={'Going abroad for education, employment or the Olympics?'} image={"https://promos.makemytrip.com/notification/xhdpi/Vande-Flight-10072020.png"} /></div>
+        <div className="w-1/3 p-2"><Smallslide para={'Call 01244628747 for international booking... '} image={"https://promos.makemytrip.com/notification/xhdpi/Vande-Flight-10072020.png"} /></div>
+        <div className="w-1/3 p-2"><Smallslide para={'Insurance made easy – Acko'} image={"https://tripmoneycmsimgak.mmtcdn.com/img/Acko_1_a95a85f8c1.png"} /></div>
+        <div className="w-1/3 p-2"><Smallslide para={'Check out our Indian Travel Trends Report.'} image={"https://promos.makemytrip.com/Growth/Images/B2C/Uncompressed/Artboard_travRep.png"} /></div>
+        <div className="w-1/3 p-2"><Smallslide para={'Finding Indian Food just got easier! '} image={"https://promos.makemytrip.com/images/CDN_upload/indiannessapphome2.png"} /></div>
+        <div className="w-1/3 p-2"><Smallslide para={'Karo Acchi Sehat Ka Iraada'} image={"https://tripmoneycmsimgak.mmtcdn.com/img/abhi_1_223c8a2989.png"} /></div>
+      </Slide>
     </div>
   );
 };
@@ -43,93 +48,24 @@ export const BigSlidesExample = () => {
   };
 
   return (
-    <div style={{width: '90%', margin: 'auto'}}>
-      <div>
-        <Slide {...properties}>
-      <div className="parentbigslide">
-      <div className="bigslideDiv">
-        <div>
-          <img src="https://promos.makemytrip.com/notification/xhdpi//WOW_116x116.jpg" alt=""/>
-          <span>T&C'sApply</span>
+    <div style={{ width: '90%', margin: 'auto' }}>
+      <Slide {...properties}>
+        <div className="parentbigslide w-1/2 p-2">
+          <div className="bigslideDiv">
+            <div>
+              <img src="https://promos.makemytrip.com/notification/xhdpi//WOW_116x116.jpg" alt="" />
+              <span>T&C'sApply</span>
+            </div>
+            <div>
+              <h3>GENERAL </h3>
+              <h2>#JoHogaWOWhoga: Book you flights at 30% off now.</h2>
+              <div className="reddiv"></div>
+              <p>Offer valid at HDFC credit card and EasyEMI.</p>
+              <h4>Explore Now</h4>
+            </div>
+          </div>
         </div>
-        <div>
-          <h3>GENERAL </h3>
-          <h2>#JoHogaWOWhoga: Book you flights at 30% off now.</h2>
-          <div className="reddiv"></div>
-          <p>Offer valid at HDFC credit card and EasyEMI.</p>
-          <h4>Explore Now</h4>
-        </div>
-      </div>
-      </div>
-
-      <div className="parentbigslide">
-      <div className="bigslideDiv">
-        <div>
-          <img src="https://promos.makemytrip.com/notification/xhdpi//train05-116x116-06012021.jpg" alt=""/>
-          <span>T&C'sApply</span>
-        </div>
-        <div>
-          <h3>DOM FLIGHTS </h3>
-          <h2>Up to Rs. 1500 Cashback on Domestic Flights!</h2>
-          <div className="reddiv"></div>
-          <p>Valid on Axis Bank Credit & Debit Cards</p>
-          <h4>Explore Now</h4>
-        </div>
-      </div>
-      </div>
-
-      <div className="parentbigslide">
-      <div className="bigslideDiv">
-        <div>
-          <img src="https://promos.makemytrip.com/notification/xhdpi//116X116-ICICI-DH-03072021.jpg" alt=""/>
-          <span>T&C'sApply</span>
-        </div>
-        <div>
-          <h3>DOM HOTELS </h3>
-          <h2>Grab FLAT 15% OFF* on 3, 4 & 5-Star Stays in India</h2>
-          <div className="reddiv"></div>
-          <p>& treat yourself to a refreshing, luxurious break.</p>
-          <h4>Explore Now</h4>
-        </div>
-      </div>
-      </div>
-
-      <div className="parentbigslide">
-      <div className="bigslideDiv">
-        <div>
-          <img src="https://promos.makemytrip.com/notification/xhdpi//116X116-MumbaiHotels-08112021.jpg" alt=""/>
-          <span>T&C'sApply</span>
-        </div>
-        <div>
-          <h3>GENERAL </h3>
-          <h2>Wow Deal: Up to 25% OFF* with an amazing gift</h2>
-          <div className="reddiv"></div>
-          <p>on hotel stays in Mumbai. Limited period offer.</p>
-          <h4>Explore Now</h4>
-        </div>
-      </div>
-      </div>
-
-      <div className="parentbigslide">
-      <div className="bigslideDiv">
-        <div>
-          <img src="https://promos.makemytrip.com/notification/xhdpi//IF-116X116-10082020.jpg" alt=""/>
-          <span>T&C'sApply</span>
-        </div>
-        <div>
-          <h3>GENERAL </h3>
-          <h2>#JoHogaWOWhoga: Book you flights at 30% off now.</h2>
-          <div className="reddiv"></div>
-          <p>Offer valid at HDFC credit card and EasyEMI.</p>
-          <h4>Explore Now</h4>
-        </div>
-      </div>
-      </div>
-
-    
-        </Slide>
-      </div>
+      </Slide>
     </div>
   );
 };
-
