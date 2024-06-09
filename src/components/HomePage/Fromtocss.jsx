@@ -4,7 +4,7 @@ export const FromtoLapcss = styled.div`
   height: 85px;
   width: 95%;
   margin: auto;
-  border: 0.01em solid #d4d0d0;
+  // border: 0.01em solid #d4d0d0;
   border-radius: 8px;
   display: grid;
   grid-template-columns: 1fr 1fr;
