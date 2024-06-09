@@ -13,7 +13,7 @@ import { Login } from "../login/Login";
 
 const Icondivcss = styled.div`
   .icondiv {
-    height: 60px;
+    height: 70px;
     width: 100%;
     margin: auto;
     background-color: white;
@@ -81,7 +81,7 @@ export const Header = () => {
             <span className="hover:text-blue-500 cursor-pointer text-[#a3a3a3]">
               <HomeWorkIcon style={{ fontSize: 30, padding: 4 }}></HomeWorkIcon>
             </span>
-            <p className="p-0 -m-[-6px] text-[#555454] text-xs">Homestays</p>
+            <p className="p-0 -m-[-6px] text-[#555454] text-xs">Home</p>
           </div>
           <div>
             <span className="hover:text-blue-500 cursor-pointer text-[#a3a3a3]">
@@ -89,7 +89,7 @@ export const Header = () => {
                 style={{ fontSize: 30, padding: 4 }}
               ></HolidayVillageIcon>
             </span>
-            <p className="p-0 -m-[-6px] text-[#555454] text-xs">Hoiday packages</p>
+            <p className="p-0 -m-[-6px] text-[#555454] text-xs">Hoiday</p>
           </div>
           <div>
             <span className="hover:text-blue-500 cursor-pointer text-[#a3a3a3]">

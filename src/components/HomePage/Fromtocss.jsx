@@ -4,6 +4,7 @@ export const FromtoLapcss = styled.div`
   height: 85px;
   width: 95%;
   margin: auto;
+  border: 0.01em solid #d4d0d0;
   border-radius: 8px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -28,6 +29,7 @@ export const FromtoLapcss = styled.div`
 
   .fromtodiv div {
     height: 82%;
+    border: 0.01em solid #d4d0d0;
   }
 
   .fromtodiv select {
@@ -57,7 +59,7 @@ export const FromtoLapcss = styled.div`
   }
 
   .fromtodiv2 div {
-    // border-right: 0.01em solid #d4d0d0;
+    border-right: 0.01em solid #d4d0d0;
     height: 89%;
   }
 

@@ -87,7 +87,7 @@ export const Bottom = () => {
             </ul>
           </div>
           <div class="p-5">
-            <h3 class="text-xl font-bold text-gray-900">TOP HOTELS IN INDIA</h3>
+            <h2 class="text-xl font-bold text-gray-900">TOP HOTELS IN INDIA</h2>
             <ul class="m-0 p-0 flex flex-wrap list-none">
               <li class="text-xs m-1">Fairmont Jaipur</li>
               <li class="text-xs m-1">St Regis Goa</li>
