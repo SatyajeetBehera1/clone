@@ -82,7 +82,6 @@ export default function QNA() {
           </div>
         </div>
       </div>
-      <div className="border-t-[0.01em] border-solid border-indigo-500"></div>
     </div>
   );
 }
