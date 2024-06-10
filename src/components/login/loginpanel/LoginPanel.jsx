@@ -2,7 +2,6 @@
 import React from "react";
 import { useState} from "react";
 import { LoginForm } from "./LoginForm";
-import { ConfirmOtp } from "./ConfirmOtp";
 import UserForm from "./UserForm";
 import Auth from "../../../auth";
 import styled from 'styled-components'
@@ -97,16 +96,6 @@ export const LoginPanel = ({ handleClick, handleUser }) => {
         <div className="close">
           <span onClick={handleClick}>X</span>
         </div>
-        {
-          (Auth.isAuthenticated()&& isUserExist ) ?handleNewUser(findUser):
-        
-        (Auth.isAuthenticated()&& !isUserExist ) ? <UserForm handleNewUser={handleNewUser} />:otpSend ? (
-          <ConfirmOtp
-                handleNewUser = {checkIsUserExist}
-                handleChange={handleChange}                  
-                value = {value}
-          />
-        ) :(
           <LoginForm 
           handleOtpStatus={handleOtpSend} 
           handleChange={handleChange}     
@@ -114,7 +103,6 @@ export const LoginPanel = ({ handleClick, handleUser }) => {
           value = {value}
           
           />
-        )}
       </div>
     </div>
   </Style>

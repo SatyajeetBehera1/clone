@@ -42,7 +42,7 @@ const Style = styled.div`
     }
   }
 `;
-export default function UserForm({ handleNewUser }) {
+export default function({ handleNewUser }) {
   const [newUser, setNewUser] = useState({});
 
   const handleSubmit = (e) => {

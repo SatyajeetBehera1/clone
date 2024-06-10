@@ -105,20 +105,6 @@ export const SignupPage = (props) => {
   const { handleChange, handleSubmit, value } = props;
   const [error, setError] = useState(null);
 
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      await axios.post("http://localhost:4000/signup", {
-        name: value.name,
-        email: value.email,
-        password: value.password,
-      });
-      handleSubmit();
-    } catch (error) {
-      setError('Signup failed. Please check your inputs and try again.');
-    }
-  };
 
   return (
     <Style>
@@ -128,14 +114,13 @@ export const SignupPage = (props) => {
           <div>MYBIZ ACCOUNT</div>
         </div>
         <h1>Signup</h1>
-        <form onSubmit={handleFormSubmit}>
+        <form>
           <div className="inp-wrap">
             <label htmlFor="name">Name</label>
             <div className="inp">
               <input
                 id="name"
                 type="text"
-                onChange={handleChange('name')}
                 placeholder=""
                 value={value.name}
                 required
@@ -149,7 +134,6 @@ export const SignupPage = (props) => {
               <input
                 id="email"
                 type="email"
-                onChange={handleChange('email')}
                 placeholder=""
                 value={value.email}
                 required
@@ -163,7 +147,6 @@ export const SignupPage = (props) => {
               <input
                 id="password"
                 type="password"
-                onChange={handleChange('password')}
                 placeholder=""
                 value={value.password}
                 required
@@ -171,7 +154,6 @@ export const SignupPage = (props) => {
               />
             </div>
           </div>
-          {error && <p className="indicate">{error}</p>}
           <div>
             <input type="submit" className="cbtn" value="Submit" />
           </div>

@@ -103,19 +103,7 @@ const Style = styled.div`
 export const LoginForm = (props) => {
   const { handleOtpStatus, handleChange, hashHandleChange, value } = props;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
 
-    axios.post("http://localhost:4000/login", {
-      email: value.email,
-      password: value.password,
-    }).then((res) => {
-      const hash = res.data.hash;
-      hashHandleChange(hash);
-    });
-
-    handleOtpStatus();
-  };
 
   return (
     <Style>
@@ -125,13 +113,12 @@ export const LoginForm = (props) => {
           <div>MYBIZ ACCOUNT</div>
         </div>
         <h1>Login/signup</h1>
-        <form onSubmit={handleSubmit}>
+        <form >
           <div className="inp-wrap">
             <label>Email</label>
             <div className="inp">
               <input
                 type="email"
-                onChange={handleChange('email')}
                 placeholder=""
                 value={value.email}
                 required
@@ -143,7 +130,6 @@ export const LoginForm = (props) => {
             <div className="inp">
               <input
                 type="password"
-                onChange={handleChange('password')}
                 placeholder=""
                 value={value.password}
                 required
