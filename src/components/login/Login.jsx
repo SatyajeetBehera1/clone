@@ -1,7 +1,5 @@
-import { useState } from "react";
+
 import { LoginPanel } from "./loginpanel/LoginPanel";
-import Auth from "../../auth";
-import axios from "axios";
 import styled from 'styled-components';
 
 const Style = styled.div`
@@ -130,35 +128,19 @@ const Style = styled.div`
 `;
 
 export const Login = ({ handleClick }) => {
-  const [user, setUser] = useState({ name: "Traveller" });
 
-  const logOut = () => {
-    axios.get("http://localhost:4000/logout").then((res) => {
-      console.log(res.data);
-    }).catch((err) => {
-      console.error(err.response);
-    });
-  };
-
-  const handleUser = (user) => {
+  const handleUser = () => {
     handleClick();
-    setUser(user);
     window.location.reload();
   };
 
   return (
     <Style>
-      <div className="loginTrigger" onClick={(Auth.isAuthenticated()) ? null : handleClick}>
-        {Auth.isAuthenticated() ? (
-          <div className="userLogged">
-            <div className="white">Hi {user.name}</div>
-            <button onClick={logOut} className="logout-btn">Logout</button>
-          </div>
-        ) : (
+      <div className="loginTrigger" onClick={handleClick}> 
           <div className="account">
             <button>Login</button>
           </div>
-        )}
+        
       </div>
       <div id="popup">
         <LoginPanel handleClick={handleClick} handleUser={handleUser} />

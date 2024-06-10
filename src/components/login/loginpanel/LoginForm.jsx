@@ -101,9 +101,7 @@ const Style = styled.div`
 `;
 
 export const LoginForm = (props) => {
-  const { handleOtpStatus, handleChange, hashHandleChange, value } = props;
-
-
+  const { value } = props;
 
   return (
     <Style>

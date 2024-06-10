@@ -2,8 +2,6 @@
 import React from "react";
 import { useState} from "react";
 import { LoginForm } from "./LoginForm";
-import UserForm from "./UserForm";
-import Auth from "../../../auth";
 import styled from 'styled-components'
 const Style = styled.div`
 .loginMain {
@@ -50,44 +48,15 @@ const Style = styled.div`
   }
   
 `;
-export const LoginPanel = ({ handleClick, handleUser }) => {
-
-  const [otpSend, setOtpSend] = useState(false);
-  const [findUser, setFindUser] = useState({});
-  const [isUserExist, setIsUserExist] = useState(); //initial existence of user
-
-  const checkIsUserExist=(mob)=>{
-
-    setIsUserExist(false)
-    //
-
-  }
+export const LoginPanel = ({ handleClick}) => {
 
   const [state,setState] = useState({
-    phone:"",
-    hash:"",
-    otp:""
+    email:"",
+    password:""
   });
 
-  const {phone,hash,otp} = state;
-  const value = {phone,hash,otp}
-
-  const handleOtpSend = () => {
-    setOtpSend(true);
-  };
-
-    const handleChange = (input)=>(e)=>{
-
-      setState({...state,[input]:e.target.value});
-    }
-  
-    const hashHandleChange = (hash)=>{
-      setState({...state, hash:hash});
-    }
-    const handleNewUser = (newuser)=>{
-    
-      handleUser(newuser)
-    }
+  const {email, passwowd} = state;
+  const value = {email, passwowd}
 
   return (
   <Style>
@@ -97,9 +66,6 @@ export const LoginPanel = ({ handleClick, handleUser }) => {
           <span onClick={handleClick}>X</span>
         </div>
           <LoginForm 
-          handleOtpStatus={handleOtpSend} 
-          handleChange={handleChange}     
-          hashHandleChange={hashHandleChange}
           value = {value}
           
           />
