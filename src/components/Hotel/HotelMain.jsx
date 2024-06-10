@@ -14,6 +14,7 @@ import { Login } from "../login/Login";
 import { CarousalUI } from "../HomePage/Carousal";
 import Luxe from './Luxe';
 import QNA from './QNA'
+import { Locations } from './Locations';
 
 export const HotelMain = () => {
   const [data, setData] = useState({
@@ -101,6 +102,7 @@ export const HotelMain = () => {
         <div style={{ width: "90%", margin: "auto" }}>
           <MultipleSlidesExample />
         </div>
+        <Locations></Locations>
         <QNA></QNA>
         <Bottom />
       </div>

@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Luxecss = styled.div`
   .Luxecss {
     .container {
+      width: 70%;
       background-color: #ebe7e7;
       padding-left: 132px;
       padding-right: 150px;
@@ -11,7 +12,6 @@ export const Luxecss = styled.div`
       cursor: pointer;
       overflow: hidden;
       box-sizing: border-box;
-      
     }
 
     .bigcard {
