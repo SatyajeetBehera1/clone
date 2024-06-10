@@ -15,6 +15,7 @@ import { CarousalUI } from "../HomePage/Carousal";
 import Luxe from "../Hotel/Luxe";
 import QNA from "../Hotel/QNA";
 import { Locations } from "../Hotel/Locations";
+import Destinations from "./Destinations"
 
 export const PackagesMain = () => {
   const [data, setData] = useState({
@@ -103,6 +104,7 @@ export const PackagesMain = () => {
         </div>
         <Locations></Locations>
         <QNA></QNA>
+        <Destinations></Destinations>
         <Bottom />
       </div>
     </div>
