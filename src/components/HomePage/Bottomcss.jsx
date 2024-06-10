@@ -15,9 +15,6 @@ export const Bottomcss = styled.div`
       cursor: pointer;
       color: #444343;
     }
-    p:hover {
-      color: blue;
-    }
   }
   .div2 {
     width: 88%;

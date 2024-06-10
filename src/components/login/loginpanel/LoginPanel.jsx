@@ -49,15 +49,6 @@ const Style = styled.div`
   
 `;
 export const LoginPanel = ({ handleClick}) => {
-
-  const [state,setState] = useState({
-    email:"",
-    password:""
-  });
-
-  const {email, passwowd} = state;
-  const value = {email, passwowd}
-
   return (
   <Style>
       <div className="loginMain">
@@ -66,8 +57,6 @@ export const LoginPanel = ({ handleClick}) => {
           <span onClick={handleClick}>X</span>
         </div>
           <LoginForm 
-          value = {value}
-          
           />
       </div>
     </div>

@@ -8,11 +8,6 @@ export const Navbar = styled.div`
     #0c0361 50%,
     #000120 100%
   );
-  .laltain {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-  }
   .mmtlogo {
     position: absolute;
     left: 70px;

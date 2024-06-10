@@ -100,8 +100,7 @@ const Style = styled.div`
   }
 `;
 
-export const LoginForm = (props) => {
-  const { value } = props;
+export const LoginForm = () => {
 
   return (
     <Style>
@@ -118,7 +117,6 @@ export const LoginForm = (props) => {
               <input
                 type="email"
                 placeholder=""
-                value={value.email}
                 required
               />
             </div>
@@ -129,7 +127,6 @@ export const LoginForm = (props) => {
               <input
                 type="password"
                 placeholder=""
-                value={value.password}
                 required
               />
             </div>
