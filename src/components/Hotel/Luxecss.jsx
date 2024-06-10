@@ -11,6 +11,7 @@ export const Luxecss = styled.div`
       cursor: pointer;
       overflow: hidden;
       box-sizing: border-box;
+      
     }
 
     .bigcard {
@@ -21,10 +22,8 @@ export const Luxecss = styled.div`
       border-radius: 7px;
       display: flex;
       gap: 30px;
-      /* border: 2px solid red; */
+      margin-left: -45px;
       padding-bottom: 20px;
-
-      /* padding: 34px 30px 34px 4px ; */
     }
     .title {
       padding: 35px;
