@@ -12,9 +12,9 @@ import { Link } from "react-router-dom";
 import { FareTypes } from "../HomePage/FareTypes";
 import { Login } from "../login/Login";
 import { CarousalUI } from "../HomePage/Carousal";
-import Luxe from './Luxe';
-import QNA from './QNA'
-import { Locations } from './Locations';
+import Luxe from "./Luxe";
+import QNA from "./QNA";
+import { Locations } from "./Locations";
 
 export const HotelMain = () => {
   const [data, setData] = useState({
@@ -36,7 +36,6 @@ export const HotelMain = () => {
     popup.classList.toggle("active");
   };
 
-
   return (
     <div>
       <Header />
@@ -47,7 +46,7 @@ export const HotelMain = () => {
               className="mmtlogo "
               src="https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/header/mmtLogoWhite.png"
               alt="Logo"
-              />
+            />
           </Link>
           <div className="login">
             <Login handleClick={handlePopup} />
@@ -97,7 +96,7 @@ export const HotelMain = () => {
         </div>
       </Navbar>
       <div style={{ background: "#ebe7e7", paddingTop: "50px" }}>
-      <Luxe/>
+        <Luxe />
         <CarousalUI />
         <div style={{ width: "90%", margin: "auto" }}>
           <MultipleSlidesExample />
@@ -106,7 +105,6 @@ export const HotelMain = () => {
         <QNA></QNA>
         <Bottom />
       </div>
-      
     </div>
   );
-  };
+};

@@ -1,9 +1,9 @@
+
 import styled from "styled-components";
 
 export const Luxecss = styled.div`
   .Luxecss {
     .container {
-      width: 70%;
       background-color: #ebe7e7;
       padding-left: 132px;
       padding-right: 150px;
@@ -22,8 +22,8 @@ export const Luxecss = styled.div`
       border-radius: 7px;
       display: flex;
       gap: 30px;
-      margin-left: -45px;
       padding-bottom: 20px;
+
     }
     .title {
       padding: 35px;
@@ -66,7 +66,7 @@ export const Luxecss = styled.div`
       box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
         rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
       overflow: hidden;
-      border-radius: 10px;
+      border-radius: 7px;
     }
 
     .titleCard h2 {
@@ -89,8 +89,8 @@ export const Luxecss = styled.div`
       .container {
         background-color: #f2f2f2;
 
-        margin: 0px 0px 0px 0px;
-        padding-left: 80px;
+        margin: 0px;
+        padding-left: 30px;
 
         cursor: pointer;
         overflow: hidden;
@@ -119,7 +119,7 @@ export const Luxecss = styled.div`
       .container {
         background-color: #f2f2f2;
 
-        margin: 0px 0px 0px 0px;
+        margin: 0px;
         padding-left: 80px;
 
         cursor: pointer;

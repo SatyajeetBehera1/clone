@@ -2,14 +2,14 @@ import React from "react";
 import { Locationscss } from "./Locationscss";
 
 const flightData = [
+    {
+      title: "Goa Flights",
+      imgSrc: "https://promos.makemytrip.com/store/GoaDT.JPG",
+      locations: "Delhi, Mumbai, Chennai, Ahmedabad"
+    },
   {
     title: "Chennai Flights",
     imgSrc: "http://promos.makemytrip.com/images/50x50-Other-23052019.png",
-    locations: "Delhi, Mumbai, Chennai, Ahmedabad"
-  },
-  {
-    title: "Goa Flights",
-    imgSrc: "https://promos.makemytrip.com/store/GoaDT.JPG",
     locations: "Delhi, Mumbai, Chennai, Ahmedabad"
   },
   {
@@ -18,13 +18,13 @@ const flightData = [
     locations: "Delhi, Mumbai, Chennai, Ahmedabad"
   },
   {
-    title: "Hyderabad Flights",
-    imgSrc: "http://promos.makemytrip.com/images/50x50-Ooty-23052019.png",
+    title: "Delhi Flights",
+    imgSrc: "https://promos.makemytrip.com/store/DelhiDT.JPG",
     locations: "Delhi, Mumbai, Chennai, Ahmedabad"
   },
   {
-    title: "Delhi Flights",
-    imgSrc: "https://promos.makemytrip.com/store/DelhiDT.JPG",
+    title: "Hyderabad Flights",
+    imgSrc: "http://promos.makemytrip.com/images/50x50-Ooty-23052019.png",
     locations: "Delhi, Mumbai, Chennai, Ahmedabad"
   },
   {
@@ -38,15 +38,15 @@ const flightData = [
     locations: "Delhi, Mumbai, Chennai, Ahmedabad"
   },
   {
+    title: "Jaipur Flights",
+    imgSrc: "https://promos.makemytrip.com/store/JaipurDT.JPG",
+    locations: "Delhi, Mumbai, Chennai, Ahmedabad"
+  },
+  {
     title: "Bangalore Flights",
     imgSrc: "https://promos.makemytrip.com/store/BangaloreDT.JPG",
     locations: "Delhi, Mumbai, Chennai, Ahmedabad"
   },
-  {
-    title: "Jaipur Flights",
-    imgSrc: "https://promos.makemytrip.com/store/JaipurDT.JPG",
-    locations: "Delhi, Mumbai, Chennai, Ahmedabad"
-  }
 ];
 
 export const Locations = () => {
