@@ -73,15 +73,7 @@ const dest = [
       'Nainital Lake', 'Naina Devi Hindu Temple', 'Snow View Observation Point'
     ],
     description: 'India tours are also incomplete without a trip to beautiful Nainital. This resort town in Uttarakhand lies at 2,000 meters above sea level. Enjoy the cable car rides as part of your Nainital tour package along with the stunning views of Nanda Devi (the highest mountain peak in Uttarakhand) in Nainital.',
-  },
-  {
-    name: 'Manali',
-    bestTimeToVisit: 'March to June',
-    placesToVisit: [
-      'Hadimba Temple', 'Museum of Himachal Culture & Folk Art', 'Van Vihar National Park', 'Jogini Waterfall', 'Solang Valley'
-    ],
-    description: 'Manali is synonymous with scintillating India tours, encompassing romantic honeymoons, camping, hiking, skiing at the Solang Valley and trekking at the Parvati Valley. It is also famous for rafting, paragliding and other adventure activities.',
-  },
+  }
 ];
 
 function Destinations() {

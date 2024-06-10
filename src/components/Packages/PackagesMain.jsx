@@ -16,6 +16,7 @@ import Luxe from "../Hotel/Luxe";
 import QNA from "../Hotel/QNA";
 import { Locations } from "../Hotel/Locations";
 import Destinations from "./Destinations"
+import TopCarousal from "./TopCarousal";
 
 export const PackagesMain = () => {
   const [data, setData] = useState({
@@ -90,12 +91,15 @@ export const PackagesMain = () => {
           <Fromto handleChange={handleData} />
           <FareTypes />
         </Bookingcss>
+        
         <div className="button">
           <button onClick={addLocal}>
             <Link to="/search">SEARCH</Link>
           </button>
         </div>
       </Navbar>
+      <TopCarousal></TopCarousal>
+      
       <div style={{ background: "#ebe7e7", paddingTop: "50px" }}>
         <Luxe />
         <CarousalUI />
@@ -107,6 +111,7 @@ export const PackagesMain = () => {
         <Destinations></Destinations>
         <Bottom />
       </div>
+      
     </div>
   );
 };
