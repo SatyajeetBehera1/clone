@@ -3,7 +3,7 @@ import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import { NavigateBefore, NavigateNext } from "@mui/icons-material";
 import { CarousalU } from "./CarousalUI";
-import { slider0, slider1, slider2 } from "./CarousalData";
+import { slider0, slider1, slider2 } from "../HomePage/CarousalData";
 
 const Arrow = ({ direction, onClick }) => (
   <div
@@ -25,17 +25,16 @@ const SlideContent = ({ item }) => (
         <div className="ind-slide">
           <div className="imageSection">
             <img src={item.thumbnail_image} alt="" />
-            <p className="text-xs text-gray-500">T&C's Apply</p>
           </div>
           <div className="contentSection">
             <div>
               <p className="offerCardTitle">{item.title}</p>
               <p className="offerCardSubTitle">{item.subTitle}</p>
-              <div className="divider w-40 h-1 bg-red-500"></div>
-              <p className="offerCardOffers text-sm text-gray-500">{item.offer}</p>
+              <div className="divider"></div>
+              <p className="offerCardOffers">{item.offer}</p>
             </div>
             <div className="knowMore">
-              <p className="text-sm font-bold text-blue-500">KNOW MORE</p>
+              <p>KNOW MORE</p>
             </div>
           </div>
         </div>
@@ -79,7 +78,7 @@ export const CarousalUI = () => {
         <div className='sliderContainer p-5'>
           <div className='sliderTitle'>
             <h2 className="text-xl font-bold">Offers</h2>
-            <div className='sliderLinks mt-6 ' >
+            <div className='sliderLinks mt-6'>
               {["Holiday", "Flights", "Trains", "Cabs"].map((label, index) => (
                 <p
                   key={index}
@@ -99,6 +98,10 @@ export const CarousalUI = () => {
               </div>
             ))}
           </Slide>
+        </div>
+        <div className="arrowContainer">
+          <Arrow direction="prev" onClick={() => document.querySelector('.react-slideshow-wrapper .react-slideshow-container .react-slideshow-arrow-prev').click()} />
+          <Arrow direction="next" onClick={() => document.querySelector('.react-slideshow-wrapper .react-slideshow-container .react-slideshow-arrow-next').click()} />
         </div>
       </div>
     </CarousalU>
