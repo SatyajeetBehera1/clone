@@ -11,8 +11,8 @@ export const Icondivcss = styled.div`
 
     @media (max-width: 767px) {
       width: 70%;
-      margin-bottom: 20px; /* Add bottom margin for mobile */
-      display: none; /* Hide the entire icondiv container */
+      margin-bottom: 20px; 
+      display: none;
     }
   }
 

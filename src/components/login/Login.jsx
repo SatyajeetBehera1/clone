@@ -140,7 +140,6 @@ export const Login = ({ handleClick }) => {
           <div className="account">
             <button>Login</button>
           </div>
-        
       </div>
       <div id="popup">
         <LoginPanel handleClick={handleClick} handleUser={handleUser} />
