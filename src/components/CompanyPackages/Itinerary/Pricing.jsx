@@ -2,7 +2,7 @@ import React from "react";
 
 const Pricing = () => {
   return (
-    <div className="p-4 border bg-white border-gray-300 rounded-lg shadow-md w-full sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-[90%] sticky top-[10%] z-50">
+    <div className="p-4 border bg-white border-gray-300 rounded-lg shadow-md w-full sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-[90%] sticky top-[10%] z-40">
       <div className="flex items-center justify-between">
         <p className="text-sm font-bold text-gray-500 line-through">
           ₹54,596

@@ -14,9 +14,9 @@ export default function ItinerarySectionButton() {
 
   return (
     <div className="border bg-blue-100 w-[95%] sticky top-[15.5%] z-10">
-      <div className="TopRow p-1">
-        <ul className="flex list-none">
-          <li className="m-1 text-md">
+      <div className="TopRow p-1 mx-3">
+        <ul className="flex justify-between list-none">
+          <li className="text-md">
             <button
               className={`${buttonClass} ${activeButton === 1 ? activeButtonClass : ""}`}
               onClick={() => handleButtonClick(1)}
@@ -24,15 +24,15 @@ export default function ItinerarySectionButton() {
               7 DAY PLAN
             </button>
           </li>
-          <li className="m-1 text-md">
+          <li className="text-md">
             <button
               className={`${buttonClass} ${activeButton === 2 ? activeButtonClass : ""}`}
               onClick={() => handleButtonClick(2)}
             >
-              2 FLIGHTS & 6 TRANSFERS
+              6 TRANSFERS
             </button>
           </li>
-          <li className="m-1 text-md">
+          <li className="text-md">
             <button
               className={`${buttonClass} ${activeButton === 3 ? activeButtonClass : ""}`}
               onClick={() => handleButtonClick(3)}
@@ -40,7 +40,7 @@ export default function ItinerarySectionButton() {
               4 HOTELS
             </button>
           </li>
-          <li className="m-1 text-md">
+          <li className="text-md">
             <button
               className={`${buttonClass} ${activeButton === 4 ? activeButtonClass : ""}`}
               onClick={() => handleButtonClick(4)}

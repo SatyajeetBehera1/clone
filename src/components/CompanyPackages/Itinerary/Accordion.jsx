@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import Carousel from "./Carousel";
 import Shared from "./Shared";
 import Stay from "./Stay";
 import Activities from "./Activities";
 
 const Accordion = ({ activeDayIndex, setActiveDayIndex }) => {
+  const accordionRefs = useRef([]);
+
   const handleToggle = (index) => {
     setActiveDayIndex(activeDayIndex === index ? null : index);
   };
+
+  useEffect(() => {
+    if (activeDayIndex !== null && accordionRefs.current[activeDayIndex]) {
+      accordionRefs.current[activeDayIndex].scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [activeDayIndex]);
 
   return (
     <div className="accordion-group w-[77%] m-1 ml-[18%] mt-[-29%] sticky top-[25%]" data-accordion="default-accordion">
@@ -18,6 +26,7 @@ const Accordion = ({ activeDayIndex, setActiveDayIndex }) => {
             activeDayIndex === index ? "bg-indigo-50" : ""
           }`}
           id={`basic-heading-${index}`}
+          ref={(el) => (accordionRefs.current[index] = el)}
         >
           <button
             className={`accordion-toggle group inline-flex items-center justify-between leading-8 text-gray-900 w-full transition duration-500 text-left hover:text-indigo-600 ${
