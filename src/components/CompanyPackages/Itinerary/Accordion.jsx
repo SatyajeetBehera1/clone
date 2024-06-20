@@ -1,25 +1,41 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Carousel from "./Carousel";
 import Shared from "./Shared";
 import Stay from "./Stay";
 import Activities from "./Activities";
 import AboutDay from "./AboutDay";
 
-const Accordion = ({ activeDayIndex, setActiveDayIndex }) => {
+const Accordion = ({ activeSection }) => {
+  const [activeDayIndices, setActiveDayIndices] = useState([]);
+
   const accordionRefs = useRef([]);
 
   const handleToggle = (index) => {
-    setActiveDayIndex(activeDayIndex === index ? null : index);
+    if (activeDayIndices.includes(index)) {
+      setActiveDayIndices(activeDayIndices.filter((item) => item !== index));
+    } else {
+      setActiveDayIndices([...activeDayIndices, index]);
+    }
   };
 
   useEffect(() => {
-    if (activeDayIndex !== null && accordionRefs.current[activeDayIndex]) {
-      accordionRefs.current[activeDayIndex].scrollIntoView({
+    
+    if (activeDayIndices.length > 0 && accordionRefs.current[activeDayIndices[0]]) {
+      accordionRefs.current[activeDayIndices[0]].scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
     }
-  }, [activeDayIndex]);
+  }, [activeDayIndices, activeSection]);
+
+  
+  useEffect(() => {
+    if (activeSection === "ACTIVITIES" || activeSection === "DAY PLAN" || activeSection === "TRANSFERS" || activeSection === "HOTELS") {
+      setActiveDayIndices([0, 1, 2, 3]); 
+    } else {
+      setActiveDayIndices([]);
+    }
+  }, [activeSection]);
 
   return (
     <div
@@ -30,14 +46,14 @@ const Accordion = ({ activeDayIndex, setActiveDayIndex }) => {
         <div
           key={index}
           className={`accordion py-4 px-6 mb-7 transition-all duration-500 bg-gray-50 rounded-2xl hover:bg-indigo-50 ${
-            activeDayIndex === index ? "bg-indigo-50" : ""
+            activeDayIndices.includes(index) ? "bg-indigo-50" : ""
           }`}
           id={`basic-heading-${index}`}
           ref={(el) => (accordionRefs.current[index] = el)}
         >
           <button
             className={`accordion-toggle group inline-flex items-center justify-between leading-8 text-gray-900 w-full transition duration-500 text-left hover:text-indigo-600 ${
-              activeDayIndex === index ? "text-indigo-600" : ""
+              activeDayIndices.includes(index) ? "text-indigo-600" : ""
             }`}
             aria-controls={`basic-collapse-${index}`}
             onClick={() => handleToggle(index)}
@@ -48,7 +64,7 @@ const Accordion = ({ activeDayIndex, setActiveDayIndex }) => {
             <p>Details for {day}</p>
             <svg
               className={`text-gray-500 transition duration-500 group-hover:text-indigo-600 ${
-                activeDayIndex === index ? "rotate-180 text-indigo-600" : ""
+                activeDayIndices.includes(index) ? "rotate-180 text-indigo-600" : ""
               }`}
               width="22"
               height="22"
@@ -68,30 +84,40 @@ const Accordion = ({ activeDayIndex, setActiveDayIndex }) => {
           <div
             id={`basic-collapse-${index}`}
             className={`accordion-content w-full px-0 overflow-hidden transition-max-height duration-500 ease-in-out ${
-              activeDayIndex === index ? "h-full" : "max-h-0"
+              activeDayIndices.includes(index) ? "h-full" : "max-h-0"
             }`}
             aria-labelledby={`basic-heading-${index}`}
           >
             <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
-            <section>
-              <AboutDay />
-            </section>
-            <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
-            <section className="Carousel">
-              <Carousel />
-            </section>
-            <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
-            <section className="Transfer">
-              <Shared />
-            </section>
-            <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
-            <section className="Hotels">
-              <Stay />
-            </section>
-            <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
-            <section className="Activities">
-              <Activities />
-            </section>
+            <AboutDay />
+
+            {(activeSection === "ACTIVITIES" || activeSection === "DAY PLAN") && (
+              <>
+                <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
+                <Carousel />
+              </>
+            )}
+
+            {(activeSection === "TRANSFERS" || activeSection === "DAY PLAN") && (
+              <>
+                <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
+                <Shared />
+              </>
+            )}
+
+            {(activeSection === "HOTELS" || activeSection === "DAY PLAN") && (
+              <>
+                <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
+                <Stay />
+              </>
+            )}
+
+            {(activeSection === "ACTIVITIES" || activeSection === "DAY PLAN") && (
+              <>
+                <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
+                <Activities />
+              </>
+            )}
           </div>
         </div>
       ))}
