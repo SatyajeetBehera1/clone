@@ -8,12 +8,11 @@ import SummaryMain from "../Summary/SummaryMain";
 import Parent from "./Parent";
 
 export default function Main(prop) {
-  console.log(prop.activeTab);
   if (prop.activeTab === "ITINERARY") {
     return (
       <div className="mx-[8%] mt-4 flex ">
         <div className="bg-white">
-          <ItinerarySectionButton></ItinerarySectionButton>
+        <ItinerarySectionButton />
             <Parent></Parent>
         </div>
 

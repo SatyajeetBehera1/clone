@@ -2,6 +2,9 @@ import React from "react";
 
 export default function Shared() {
   return (
+    <>
+    <h3>Transfer in Vehicles</h3>
+    <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
     <div className="p-4 bg-transparent rounded-lg w-full">
         
       <ol className="relative border-l border-gray-300">
@@ -18,5 +21,6 @@ export default function Shared() {
         </li>
       </ol>
     </div>
+    </>
   );
 }

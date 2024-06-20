@@ -3,6 +3,7 @@ import Carousel from "./Carousel";
 import Shared from "./Shared";
 import Stay from "./Stay";
 import Activities from "./Activities";
+import AboutDay from "./AboutDay";
 
 const Accordion = ({ activeDayIndex, setActiveDayIndex }) => {
   const accordionRefs = useRef([]);
@@ -13,12 +14,18 @@ const Accordion = ({ activeDayIndex, setActiveDayIndex }) => {
 
   useEffect(() => {
     if (activeDayIndex !== null && accordionRefs.current[activeDayIndex]) {
-      accordionRefs.current[activeDayIndex].scrollIntoView({ behavior: "smooth", block: "start" });
+      accordionRefs.current[activeDayIndex].scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   }, [activeDayIndex]);
 
   return (
-    <div className="accordion-group w-[77%] m-1 ml-[18%] mt-[-29%] sticky top-[25%]" data-accordion="default-accordion">
+    <div
+      className="accordion-group w-[77%] m-1 ml-[18%] mt-[-29%] sticky top-[25%]"
+      data-accordion="default-accordion"
+    >
       {["Day 1", "Day 2", "Day 3", "Day 4"].map((day, index) => (
         <div
           key={index}
@@ -35,7 +42,9 @@ const Accordion = ({ activeDayIndex, setActiveDayIndex }) => {
             aria-controls={`basic-collapse-${index}`}
             onClick={() => handleToggle(index)}
           >
-            <p className="text-white bg-orange-700 rounded-xl w-[10%] text-center">{day}</p>
+            <p className="text-white bg-orange-700 rounded-xl w-[10%] text-center">
+              {day}
+            </p>
             <p>Details for {day}</p>
             <svg
               className={`text-gray-500 transition duration-500 group-hover:text-indigo-600 ${
@@ -64,22 +73,25 @@ const Accordion = ({ activeDayIndex, setActiveDayIndex }) => {
             aria-labelledby={`basic-heading-${index}`}
           >
             <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
-            <p className="text-base text-gray-900 leading-6">
-              To contact customer support, look for a 'Contact us' or 'Help'
-              button or link on the website or platform. You may be able to email,
-              call, or chat with customer support for assistance.
-            </p>
+            <section>
+              <AboutDay />
+            </section>
             <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
-            <h3 className="font-bold">Swiss Continuous Pass - 6 Days Pass</h3>
-            <Carousel />
+            <section className="Carousel">
+              <Carousel />
+            </section>
             <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
-            <h3>Transfer in Vehicles</h3>
+            <section className="Transfer">
+              <Shared />
+            </section>
             <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
-            <Shared />
+            <section className="Hotels">
+              <Stay />
+            </section>
             <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
-            <Stay />
-            <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
-            <Activities />
+            <section className="Activities">
+              <Activities />
+            </section>
           </div>
         </div>
       ))}

@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function Delightful() {
-
   return (
     <div className="container p-1 bg-white text-gray-800 rounded-md  sticky top-0 z-20">
       <div className="ml-[8%]">
@@ -18,9 +17,8 @@ export default function Delightful() {
               1N Srinagar • 1N Gulmarg • 2N Pahalgam • 2N Srinagar
             </p>
           </div>
-          </div>
         </div>
-      
+      </div>
     </div>
   );
 }
