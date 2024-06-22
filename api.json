@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "hotels": [],
+        "activities": [
+            {
+                "id": 1,
+                "activity_name": "vghjklfrtrytyiuojkmn",
+                "activity_description": "vfsretyukhbncfgrtyhjbn",
+                "activity_photo1": null,
+                "activity_photo2": null,
+                "place_name": 1
+            }
+        ],
+        "day": 1,
+        "place_name": "puri",
+        "starting_from": "bbsr",
+        "going_to": "puri",
+        "about_the_place": "rddyuiyuoifvbn",
+        "photo1": "/place_photos/KIIT1.JPG",
+        "photo2": "/place_photos/KIIT2.png"
+    }
+]

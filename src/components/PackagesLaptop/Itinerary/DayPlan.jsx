@@ -1,6 +1,6 @@
 import React from "react";
 
-const DayPlan = ({ activeDayIndex }) => {
+const DayPlan = ({ activeDayIndex, setActiveDayIndex }) => {
   const days = ["Day 1", "Day 2", "Day 3", "Day 4"];
 
   return (
@@ -14,6 +14,7 @@ const DayPlan = ({ activeDayIndex }) => {
                 className={`absolute w-3 h-3 rounded-full -left-1.5 border border-white ${
                   activeDayIndex === index ? "bg-blue-600" : "bg-gray-300"
                 }`}
+                onClick={() => setActiveDayIndex(index)}
               ></div>
               <time className="mb-1 text-sm font-medium leading-none text-gray-600">{day}</time>
             </li>
