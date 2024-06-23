@@ -14,7 +14,7 @@ const ItineraryButton = ({ onButtonClick }) => {
 
   return (
     <div className="sticky top-0 z-20">
-      <div className="bg-blue-100 border-b border-blue-500">
+      <div className="bg-blue-100 border-t border-blue-500">
         <div className="max-w-screen-sm mx-auto overflow-x-auto">
           <ul className="flex text-sm p-2">
             {[
@@ -35,8 +35,7 @@ const ItineraryButton = ({ onButtonClick }) => {
                 </button>
               </li>
             ))}
-          </ul>
-          
+          </ul>          
         </div>
       </div>
     </div>

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ItineraryButton from "./ItineraryButton";
 import DayButton from "./DayButton";
+import DayPlan from "./DayPlan";
+
 
 export default function Accordion() {
   const [activeAccordion, setActiveAccordion] = useState(null);
@@ -17,7 +19,7 @@ export default function Accordion() {
     <div>
       <div className="accordion-group" data-accordion="default-accordion">
         <div
-          className={`accordion py-4 px-6 mb-7 transition-all duration-500 bg-gray-50 rounded-2xl hover:bg-indigo-50 ${
+          className={`accordion mb-7 transition-all duration-500 bg-gray-50  hover:bg-indigo-50 ${
             activeAccordion === 0 ? "accordion-active:bg-indigo-50" : ""
           }`}
           id="basic-heading-one-with-arrow"
@@ -29,7 +31,7 @@ export default function Accordion() {
             aria-controls="basic-collapse-one-with-arrow"
             onClick={() => handleAccordionToggle(0)}
           >
-            <div>
+            <div className="p-2">
               <h3 className="text-black text-lg font-bold">ITINERARY</h3>
               <p className="text-black mt-[-2%]">Day wise Details of your package</p>
             </div>
@@ -67,6 +69,7 @@ export default function Accordion() {
                 <DayButton onButtonClick={(buttonName) => console.log(buttonName)} />
               </>
             )}
+            <DayPlan></DayPlan>
           </div>
         </div>
       </div>
