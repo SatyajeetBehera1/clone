@@ -1,12 +1,14 @@
 import React from "react";
+import ActivitiesIcon from "../Summary/Activities.svg";
 
 export default function Activities() {
   return (
     <div className="max-w-xl mx-auto p-2">
-      <div className="mb-6">
+      <div className="mb-6 flex">
         {/* Activity Title */}
+        <img src={ActivitiesIcon} alt="Icon" className="w-5 h-5 mr-2 mt-1" />
         <p className="text-xl font-bold mb-2">
-          Activity in Goa <span className="text-gray-600">7 Hrs</span>
+          Activity in Goa 
         </p>
       </div>
       <div className="bg-gray-100 rounded-lg shadow-md p-6 flex flex-col">

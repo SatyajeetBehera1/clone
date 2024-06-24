@@ -38,7 +38,7 @@ const ChooseButton = ({ activeTab, handleTabClick }) => {
   );
 };
 
-export const CompanyMain = () => {
+export const CompanyMain = (props) => {
   const [activeTab, setActiveTab] = useState("ITINERARY");
 
   const handleTabClick = (tab) => {
@@ -47,12 +47,12 @@ export const CompanyMain = () => {
 
   return (
     <div>
-      <Icondiv />
-      <Search />
-      <Delightful />
-      <MidSectionPhotos />
-      <ChooseButton activeTab={activeTab} handleTabClick={handleTabClick} />
-      <Main activeTab={activeTab} />
+      <Icondiv  {...props}/>
+      <Search  {...props}/>
+      <Delightful  {...props}/>
+      <MidSectionPhotos  {...props}/>
+      <ChooseButton activeTab={activeTab} handleTabClick={handleTabClick}  {...props}/>
+      <Main activeTab={activeTab}  {...props}/>
     </div>
   );
 };

@@ -1,12 +1,17 @@
 import React from "react";
+import TransferIcon from "../Summary/Transfer.svg";
 
 export default function Shared() {
   return (
     <div className="flex flex-col items-center">
       <div className="rounded-lg overflow-hidden w-full max-w-2xl p-6 bg-white shadow-md">
+        <div className="flex">
+
+      <img src={TransferIcon} alt="Icon" className="w-5 h-5 mr-2 mt-2" />
         <h3 className="text-2xl font-bold text-gray-800 mb-4">
           Transfer in Vehicles
         </h3>
+        </div>
         <hr className="h-px my-4 bg-gray-200 border-0" />
         <div className="bg-transparent rounded-lg w-full">
           <ol className="relative border-l border-gray-300 ml-4">

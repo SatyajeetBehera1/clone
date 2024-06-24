@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from './Modal';
 
-const MidSectionPhotos = () => {
+const MidSectionPhotos = (props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleViewGallery = () => {
@@ -12,14 +12,29 @@ const MidSectionPhotos = () => {
     setIsModalOpen(false);
   };
 
+  const { package: packageData } = props.placeData || {};
+
+  if (!packageData) {
+    return null;
+  }
+
+  const images = [
+    packageData.photo1,
+    packageData.photo2,
+    packageData.photo3,
+    packageData.photo4,
+    packageData.photo5,
+    packageData.photo6
+  ];
+
   return (
     <div className="">
       <div className="container w-[82%] bg-white flex flex-col md:flex-row ml-[8%] md:ml-[8%]">
         <div className="left relative hidden md:block">
           <img
             className="w-full h-full object-cover rounded-md shadow-md z-0"
-            src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/3795/1200x658_Srinagar.jpg?crop=460:300&downsize=460:300"
-            alt="Srinagar Kashmir"
+            src={images[0] || "default_image_url"}
+            alt="Main"
             onClick={handleViewGallery}
           />
           <button
@@ -31,26 +46,14 @@ const MidSectionPhotos = () => {
         </div>
 
         <div className="middle grid grid-cols-2 gap-2 md:flex-1 md:ml-2 md:flex md:flex-wrap md:justify-between md:gap-2 w-full">
-          <img
-            className="w-full md:w-auto h-auto object-cover rounded-md shadow-md flex-1"
-            src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/Q.jpg?crop=225:145&downsize=225:145"
-            alt="Image 1"
-          />
-          <img
-            className="w-full md:w-auto h-auto object-cover rounded-md shadow-md flex-1"
-            src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/O.jpg?crop=225:145&downsize=225:145"
-            alt="Image 2"
-          />
-          <img
-            className="w-full md:w-auto h-auto object-cover rounded-md shadow-md flex-1"
-            src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/V.jpg?crop=225:145&downsize=225:145"
-            alt="Image 3"
-          />
-          <img
-            className="w-full md:w-auto h-auto object-cover rounded-md shadow-md flex-1"
-            src="https://hldak.mmtcdn.com/prod-s3-activity-templates/activitiesImagesFinal/activity/GOI/ACT10000000009982_9.jpg?crop=225:145&downsize=225:145"
-            alt="Image 4"
-          />
+          {images.slice(1, 5).map((src, index) => (
+            <img
+              key={index}
+              className="w-full md:w-auto h-auto object-cover rounded-md shadow-md flex-1"
+              src={src || "default_image_url"}
+              alt={`Image ${index + 1}`}
+            />
+          ))}
         </div>
 
         <div className="right hidden md:block">
@@ -58,8 +61,8 @@ const MidSectionPhotos = () => {
             className="active ml-2 w-full h-full object-cover rounded-md shadow-md z-0"
             width="285"
             height="300"
-            src="https://r1imghtlak.mmtcdn.com/2bb297aeb17b11ee9f360a58a9feac02.jpg?&downsize=285:300"
-            alt="property_photo"
+            src={images[5] || "default_image_url"}
+            alt="Property Photo"
           />
         </div>
       </div>
