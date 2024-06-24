@@ -2,25 +2,31 @@ import React from "react";
 
 export default function Shared() {
   return (
-    <>
-    <h3>Transfer in Vehicles</h3>
-    <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
-    <div className="p-4 bg-transparent rounded-lg w-full">
-        
-      <ol className="relative border-l h-12 border-gray-300">
-        <li className="mb-6 ml-6">
-          <div className="absolute w-3 h-3 bg-blue-500 rounded-full -left-1.5 border border-white "></div>
-          <div className="ml-3 flex-grow border w-full border-gray-400 rounded-lg py-2 px-4 text-sm text-gray-700">
-            Zürich Hauptbahnhof
-          </div>
-        </li>
-        
-      </ol>
-        <li className="ml-6 list-none">
-          <div className=" w-3 h-3 bg-blue-500 rounded-full ml-[-29.5px] border border-white"></div>
-          <div className="ml-3 mt-[-1px] flex-grow border w-full border-gray-400 rounded-lg py-2 px-4 text-sm text-gray-700">Luzern Station</div>
-        </li>
+    <div className="flex flex-col items-center">
+      <div className="rounded-lg overflow-hidden w-full max-w-2xl p-6 bg-white shadow-md">
+        <h3 className="text-2xl font-bold text-gray-800 mb-4">
+          Transfer in Vehicles
+        </h3>
+        <hr className="h-px my-4 bg-gray-200 border-0" />
+        <div className="bg-transparent rounded-lg w-full">
+          <ol className="relative border-l border-gray-300 ml-4">
+            <li className="mb-6 ml-6 flex flex-col items-start">
+              <div className="absolute w-3 h-3 bg-blue-500 rounded-full -left-1.5 border border-white"></div>
+              <span className="text-gray-600 font-medium mb-1">From</span>
+              <div className="ml-3 w-full border border-gray-400 rounded-lg py-2 px-4 text-sm text-gray-700">
+                Zürich Hauptbahnhof
+              </div>
+            </li>
+            <li className="ml-6 flex flex-col items-start list-none">
+              <div className="w-3 h-3 bg-blue-500 rounded-full -left-1.5 border border-white ml-[-30px]"></div>
+              <span className="text-gray-600 font-medium mb-1 ">To</span>
+              <div className="ml-[2%] w-full border border-gray-400 rounded-lg py-2 px-4 text-sm text-gray-700">
+                Luzern Station
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
     </div>
-    </>
   );
 }
