@@ -1,7 +1,24 @@
 [
     {
         "id": 1,
-        "hotels": [],
+        "hotels": [
+            {
+                "id": 2,
+                "hotel_name": "hotel 1",
+                "hotel_image1": "/hotel_photos/KIIT2_XZFjT8T.png",
+                "hotel_image2": "/hotel_photos/KIIT2_oiypVxX.png",
+                "hotel_image3": "/hotel_photos/KIIT2_eChC7nM.png",
+                "place_name": 1
+            },
+            {
+                "id": 3,
+                "hotel_name": "hotel2",
+                "hotel_image1": "/hotel_photos/KIIT1.JPG",
+                "hotel_image2": "/hotel_photos/KIIT1_AJU3Nsk.JPG",
+                "hotel_image3": "/hotel_photos/KIIT1_OaBs6qB.JPG",
+                "place_name": 1
+            }
+        ],
         "activities": [
             {
                 "id": 1,
@@ -9,6 +26,22 @@
                 "activity_description": "vfsretyukhbncfgrtyhjbn",
                 "activity_photo1": null,
                 "activity_photo2": null,
+                "place_name": 1
+            },
+            {
+                "id": 2,
+                "activity_name": "acitivity1",
+                "activity_description": "jhefwhgljkf",
+                "activity_photo1": "/activity_photos/KIIT1.JPG",
+                "activity_photo2": "/activity_photos/KIIT1_Xq8T30d.JPG",
+                "place_name": 1
+            },
+            {
+                "id": 3,
+                "activity_name": "activity2",
+                "activity_description": "hgwjkjk",
+                "activity_photo1": "/activity_photos/KIIT1_CxX6fkA.JPG",
+                "activity_photo2": "/activity_photos/KIIT1_GehO39m.JPG",
                 "place_name": 1
             }
         ],
@@ -19,5 +52,51 @@
         "about_the_place": "rddyuiyuoifvbn",
         "photo1": "/place_photos/KIIT1.JPG",
         "photo2": "/place_photos/KIIT2.png"
+    },
+    {
+        "id": 3,
+        "hotels": [
+            {
+                "id": 4,
+                "hotel_name": "hotel4",
+                "hotel_image1": "/hotel_photos/KIIT1_TloKuj1.JPG",
+                "hotel_image2": "/hotel_photos/KIIT2_u57OBh9.png",
+                "hotel_image3": "/hotel_photos/KIIT1_NkM5K6e.JPG",
+                "place_name": 3
+            },
+            {
+                "id": 5,
+                "hotel_name": "hotel 5",
+                "hotel_image1": "/hotel_photos/KIIT1_q6rs5X5.JPG",
+                "hotel_image2": "/hotel_photos/KIIT1_99ax6wq.JPG",
+                "hotel_image3": "/hotel_photos/KIIT1_0BlkFZX.JPG",
+                "place_name": 3
+            }
+        ],
+        "activities": [
+            {
+                "id": 4,
+                "activity_name": "activity 4",
+                "activity_description": "hjkhiurghjmadndkjdshjkdn",
+                "activity_photo1": "/activity_photos/KIIT1_nDKBG9g.JPG",
+                "activity_photo2": "/activity_photos/KIIT2.png",
+                "place_name": 3
+            },
+            {
+                "id": 5,
+                "activity_name": "activity 5",
+                "activity_description": "skhdgeewlkjht",
+                "activity_photo1": "/activity_photos/KIIT1_tApnSKT.JPG",
+                "activity_photo2": "/activity_photos/KIIT2_XPCTDZF.png",
+                "place_name": 3
+            }
+        ],
+        "day": 2,
+        "place_name": "puri",
+        "starting_from": "chandanpur",
+        "going_to": "puri",
+        "about_the_place": "gfyrdhccgufjcm jhrjfhkjhkjh",
+        "photo1": "/place_photos/KIIT2_kT7LKfj.png",
+        "photo2": "/place_photos/KIIT1_4PABbcK.JPG"
     }
 ]

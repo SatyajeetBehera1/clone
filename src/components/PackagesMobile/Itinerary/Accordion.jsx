@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import ItineraryButton from "./ItineraryButton";
 import DayButton from "./DayButton";
 import DayPlan from "./DayPlan";
+import Transfer from "./Transfer";
+import Places from "./Places";
+import Hotel from "./Hotel";
 
 
 export default function Accordion() {
@@ -31,7 +34,7 @@ export default function Accordion() {
             aria-controls="basic-collapse-one-with-arrow"
             onClick={() => handleAccordionToggle(0)}
           >
-            <div className="p-2">
+            <div className="p-3">
               <h3 className="text-black text-lg font-bold">ITINERARY</h3>
               <p className="text-black mt-[-2%]">Day wise Details of your package</p>
             </div>
@@ -64,12 +67,17 @@ export default function Accordion() {
             aria-labelledby="basic-heading-one-with-arrow"
           >
             {activeAccordion === 0 && (
-              <>
+              <div className="bg-blue-100 p-1">
                 <ItineraryButton onButtonClick={(buttonName) => console.log(buttonName)} />
                 <DayButton onButtonClick={(buttonName) => console.log(buttonName)} />
-              </>
+              </div>
             )}
             <DayPlan></DayPlan>
+            <Transfer></Transfer>
+            <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
+            <Places></Places>
+            <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
+            <Hotel></Hotel>
           </div>
         </div>
       </div>

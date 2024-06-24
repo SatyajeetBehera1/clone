@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Modify() {
   return (
-    <div>
+   
       <div className="flex items-center justify-between">
         <div className="h-[1px] bg-blue-400 w-[5%]"></div>
         <div className="w-[90%] flex items-center space-x-2 h-9 border border-blue-500 rounded-2xl p-2">
@@ -13,6 +13,6 @@ export default function Modify() {
         </div>
         <div className="h-[1px] bg-blue-400 w-[5%]"></div>
       </div>
-    </div>
+    
   );
 }

@@ -13,7 +13,7 @@ const ItineraryButton = ({ onButtonClick }) => {
   const activeButtonClass = "bg-blue-500 text-white";
 
   return (
-    <div className="sticky top-0 z-20">
+    <div className="sticky top-0 z-20 ">
       <div className="bg-blue-100 border-t border-blue-500">
         <div className="max-w-screen-sm mx-auto overflow-x-auto">
           <ul className="flex text-sm p-2">
