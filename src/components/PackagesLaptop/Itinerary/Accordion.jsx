@@ -5,7 +5,19 @@ import Stay from "./Stay";
 import Activities from "./Activities";
 import AboutDay from "./AboutDay";
 
-const DayAccordion = ({ day, index, isActive, onToggle, activeSection, accordionRef }) => (
+const DayAccordion = ({
+  day,
+  index,
+  isActive,
+  onToggle,
+  activeSection,
+  accordionRef,
+  activities,
+  hotels,
+  startingPoint,
+  endingPoint,
+  vehicleData
+}) => (
   <div
     className={`accordion py-4 px-6 mb-7 transition-all duration-500 bg-gray-50 rounded-2xl hover:bg-indigo-50 ${
       isActive ? "bg-indigo-50" : ""
@@ -45,89 +57,90 @@ const DayAccordion = ({ day, index, isActive, onToggle, activeSection, accordion
     <div
       id={`basic-collapse-${index}`}
       className={`accordion-content w-full px-0 overflow-hidden transition-max-height duration-500 ease-in-out ${
-        isActive ? "h-full" : "max-h-0"
+        isActive ? "h-auto" : "max-h-0"
       }`}
       aria-labelledby={`basic-heading-${index}`}
     >
       <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
       <AboutDay />
-      {(activeSection === "ACTIVITIES" || activeSection === "DAY PLAN") && (
+      {(activeSection === "ACTIVITIES" || activeSection === "DAY PLAN" || activeSection === null) && activities && activities.length > 0 && (
         <>
           <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
-          <Carousel />
+          <Carousel activities={activities} />
         </>
       )}
-      {(activeSection === "TRANSFERS" || activeSection === "DAY PLAN") && (
+      {(activeSection === "TRANSFERS" || activeSection === "DAY PLAN" || activeSection === null) && vehicleData && vehicleData.length > 0 && (
         <>
           <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
-          <Shared />
+          <Shared startingPoint={startingPoint} endingPoint={endingPoint} vehicleData={vehicleData}/>
         </>
       )}
-      {(activeSection === "HOTELS" || activeSection === "DAY PLAN") && (
+      {(activeSection === "HOTELS" || activeSection === "DAY PLAN" || activeSection === null) && hotels && hotels.length > 0 && (
         <>
           <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
-          <Stay />
+          <Stay hotels={hotels} />
         </>
       )}
-      {(activeSection === "ACTIVITIES" || activeSection === "DAY PLAN") && (
+      {(activeSection === "ACTIVITIES" || activeSection === "DAY PLAN" || activeSection === null) && activities && activities.length > 0 && (
         <>
           <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
-          <Activities />
+          <Activities activities={activities} />
         </>
       )}
     </div>
   </div>
 );
 
-const Accordion = ({ activeDayIndex, setActiveDayIndex, activeSection }) => {
+const Accordion = ({ activeDayIndex, setActiveDayIndex, activeSection, placeData }) => {
   const [activeDayIndices, setActiveDayIndices] = useState([]);
   const accordionRefs = useRef([]);
+console.log(placeData)
+  useEffect(() => {
+    if (placeData && placeData.package && placeData.package.total_days) {
+      setActiveDayIndices(Array(placeData.package.total_days).fill(false));
+    }
+  }, [placeData]);
 
   const handleToggle = (index) => {
-    if (activeDayIndices.includes(index)) {
-      const newActiveDayIndices = activeDayIndices.filter((item) => item !== index);
-      setActiveDayIndices(newActiveDayIndices);
-      if (newActiveDayIndices.length === 0) {
-        setActiveDayIndex(null); // Set the active day index to null when no accordion is open
-      }
+    const newActiveDayIndices = [...activeDayIndices];
+    newActiveDayIndices[index] = !newActiveDayIndices[index];
+    setActiveDayIndices(newActiveDayIndices);
+
+    if (newActiveDayIndices[index]) {
+      setActiveDayIndex(index);
     } else {
-      setActiveDayIndices([...activeDayIndices, index]);
-      setActiveDayIndex(index); // Set the active day index when a day's accordion is opened
+      setActiveDayIndex(null);
     }
   };
 
   useEffect(() => {
-    if (activeDayIndices.length > 0 && accordionRefs.current[activeDayIndices[0]]) {
-      accordionRefs.current[activeDayIndices[0]].scrollIntoView({
+    if (activeDayIndex !== null && accordionRefs.current[activeDayIndex]) {
+      accordionRefs.current[activeDayIndex].scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
     }
-  }, [activeDayIndices]);
-
-  useEffect(() => {
-    if (["ACTIVITIES", "DAY PLAN", "TRANSFERS", "HOTELS"].includes(activeSection)) {
-      setActiveDayIndices([0, 1, 2, 3]);
-    } else {
-      setActiveDayIndices([]);
-      setActiveDayIndex(null); // Ensure no day is highlighted if the section is not one of the listed ones
-    }
-  }, [activeSection, setActiveDayIndex]);
+  }, [activeDayIndex]);
 
   return (
     <div
-      className="accordion-group w-[77%] m-1 ml-[18%] mt-[-29%] sticky top-[25%]"
+      className="accordion-group w-[77%] m-1 ml-[18%] mt-[-24%]  sticky top-[25%]"
       data-accordion="default-accordion"
     >
-      {["Day 1", "Day 2", "Day 3", "Day 4"].map((day, index) => (
+      {activeDayIndices.map((isActive, index) => (
         <DayAccordion
           key={index}
-          day={day}
+          day={`Day ${index + 1}`}
           index={index}
-          isActive={activeDayIndices.includes(index)}
+          isActive={isActive}
           onToggle={handleToggle}
           activeSection={activeSection}
           accordionRef={(el) => (accordionRefs.current[index] = el)}
+          activities={placeData?.activities}
+          hotels={placeData?.plans && placeData.plans[index]?.hotels}
+          startingPoint={placeData?.plans && placeData.plans[index]?.plan?.starting_point}
+          endingPoint={placeData?.plans && placeData.plans[index]?.plan?.ending_point}
+          vehicleData={placeData?.plans && placeData.plans[index]?.vehicles}
         />
       ))}
     </div>

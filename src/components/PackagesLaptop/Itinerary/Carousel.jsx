@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-export default function Carousel() {
+export default function Carousel(props) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = 5;
 
+  
   const images = [
     "https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/3795/1200x658_Srinagar.jpg?crop=460:300&downsize=460:300",
     "https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/3795/1200x658_Srinagar.jpg?crop=460:300&downsize=460:300",

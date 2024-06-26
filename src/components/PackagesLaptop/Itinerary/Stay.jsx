@@ -1,7 +1,7 @@
 import React from "react";
 import HotelIcon from "../Summary/Hotel.svg";
 
-export default function Stay() {
+export default function Stay({ hotels }) {
   return (
     <div className="p-6 bg-white rounded-lg shadow-lg max-w-4xl mx-auto">
       {/* Header Section */}
@@ -19,14 +19,13 @@ export default function Stay() {
 
       {/* Hotel Cards Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <HotelCard
-          imageUrl="https://media1.thrillophilia.com/filestore/0re6740s636p502lc0t3nzhg7xqo_318551001.jpg?w=320&dpr=1.3"
-          name="ibis Styles Luzern City"
-        />
-        <HotelCard
-          imageUrl="https://media1.thrillophilia.com/filestore/0re6740s636p502lc0t3nzhg7xqo_318551001.jpg?w=320&dpr=1.3"
-          name="ibis Styles Luzern City"
-        />
+        {hotels.map((hotel, index) => (
+          <HotelCard
+            key={index}
+            imageUrl={hotel.hotel_image1} // Adjust based on API structure
+            name={hotel.hotel_name} // Adjust based on API structure
+          />
+        ))}
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ const ItinerarySectionButton = ({ onButtonClick }) => {
   const activeButtonClass = "border border-blue-500 text-white bg-blue-500";
 
   return (
-    <div className="border bg-blue-100 w-[95%] sticky top-[15.5%] z-10">
+    <div className="border bg-blue-100 w-[95%] sticky top-[16%] z-10">
       <div className="top-row p-1 mx-3">
         <ul className="flex justify-between list-none">
           {[

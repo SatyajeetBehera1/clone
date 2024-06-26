@@ -5,24 +5,40 @@ import DayPlan from "./DayPlan";
 import Transfer from "./Transfer";
 import Places from "./Places";
 import Hotel from "./Hotel";
-
+import SummaryMain from "./Summary/SummaryMain";
 
 export default function Accordion() {
   const [activeAccordion, setActiveAccordion] = useState(null);
+  const [activeSection, setActiveSection] = useState(null);
+  const [activeDay, setActiveDay] = useState("Day 1");
 
   const handleAccordionToggle = (index) => {
-    if (activeAccordion === index) {
-      setActiveAccordion(null); // Collapse the accordion if it's already expanded
-    } else {
-      setActiveAccordion(index); // Expand the clicked accordion item
-    }
+    setActiveAccordion(activeAccordion === index ? null : index);
   };
+
+  const handleButtonClick = (buttonName) => {
+    setActiveSection(buttonName);
+  };
+
+  const handleDayButtonClick = (day) => {
+    setActiveDay(day);
+  };
+
+  const renderComponents = (index) => (
+    <div>
+      <DayPlan activeDay={index+1} />
+      {(activeSection === null || activeSection === "TRANSFERS" || activeSection === "DAYPLAN") && <Transfer />}
+      {(activeSection === null || activeSection === "ACTIVITIES" || activeSection === "DAYPLAN") && <Places />}
+      {(activeSection === null || activeSection === "HOTELS" || activeSection === "DAYPLAN") && <Hotel />}
+      {activeSection === "SUMMARY" && <SummaryMain />}
+    </div>
+  );
 
   return (
     <div>
       <div className="accordion-group" data-accordion="default-accordion">
         <div
-          className={`accordion mb-7 transition-all duration-500 bg-gray-50  hover:bg-indigo-50 ${
+          className={`accordion mb-7 transition-all duration-500 bg-gray-50 hover:bg-indigo-50 ${
             activeAccordion === 0 ? "accordion-active:bg-indigo-50" : ""
           }`}
           id="basic-heading-one-with-arrow"
@@ -61,23 +77,26 @@ export default function Accordion() {
           </button>
           <div
             id="basic-collapse-one-with-arrow"
-            className={`accordion-content w-full px-0 overflow-hidden ${
-              activeAccordion === 0 ? "h-auto" : "max-h-0"
+            className={`accordion-content w-full px-0 overflow-hidden transition-max-height duration-500 ease-in-out ${
+              activeAccordion === 0 ? "h-full" : "max-h-0"
             }`}
             aria-labelledby="basic-heading-one-with-arrow"
           >
             {activeAccordion === 0 && (
               <div className="bg-blue-100 p-1">
-                <ItineraryButton onButtonClick={(buttonName) => console.log(buttonName)} />
-                <DayButton onButtonClick={(buttonName) => console.log(buttonName)} />
+                <ItineraryButton onButtonClick={handleButtonClick} />
+                <DayButton onButtonClick={handleDayButtonClick} />
               </div>
             )}
-            <DayPlan></DayPlan>
-            <Transfer></Transfer>
-            <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
-            <Places></Places>
-            <hr className="h-px my-5 bg-gray-200 border-0 dark:bg-gray-700" />
-            <Hotel></Hotel>
+            {activeAccordion === 0 && (
+              <div className="overflow-y-auto h-full">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <React.Fragment key={index}>
+                    {renderComponents(index)}
+                  </React.Fragment>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

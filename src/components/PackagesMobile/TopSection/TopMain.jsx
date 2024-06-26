@@ -4,13 +4,13 @@ import Delightful from "./Delightful";
 import Modify from "./Modify";
 import GrandOffer from "./GrandOffer";
 
-export default function TopMain() {
+export default function TopMain(props) {
   return (
     <div>
-      <Image/>
-      <Delightful></Delightful>
-      <Modify/>
-      <GrandOffer></GrandOffer>
+      <Image {...props} />
+      <Delightful {...props} />
+      <Modify {...props} />
+      <GrandOffer {...props} />
     </div>
   );
 }

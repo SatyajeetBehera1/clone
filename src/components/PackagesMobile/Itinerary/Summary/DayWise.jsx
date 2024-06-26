@@ -5,7 +5,7 @@ import HotelIcon from "./Hotel.svg";
 
 export default function DayWise() {
   return (
-    <div className="bg-gray-100 rounded-lg overflow-hiddeng">
+    <div className="bg-gray-100 rounded-lg overflow-scroll w-full">
       {/* Day Header */}
       <div className="flex items-center bg-gray-200 p-3">
         <h1 className="text-lg font-bold">Day 1 - Lucerne</h1>

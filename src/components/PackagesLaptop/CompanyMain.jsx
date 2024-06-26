@@ -47,12 +47,12 @@ export const CompanyMain = (props) => {
 
   return (
     <div>
-      <Icondiv  {...props}/>
-      <Search  {...props}/>
-      <Delightful  {...props}/>
-      <MidSectionPhotos  {...props}/>
-      <ChooseButton activeTab={activeTab} handleTabClick={handleTabClick}  {...props}/>
-      <Main activeTab={activeTab}  {...props}/>
+      <Icondiv {...props} />
+      <Search {...props} />
+      <Delightful {...props} />
+      <MidSectionPhotos {...props} />
+      <ChooseButton activeTab={activeTab} handleTabClick={handleTabClick} {...props} />
+      <Main activeTab={activeTab} {...props} />
     </div>
   );
 };

@@ -6,7 +6,6 @@ export default function Delightful(props) {
     return null;
   }
 
-  console.log(props)
   return (
     <div className="container p-1 bg-white text-gray-800 rounded-md  sticky top-0 z-20">
       <div className="ml-[8%]">

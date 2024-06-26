@@ -1,12 +1,13 @@
 import React from "react";
 
-const DayPlan = ({ activeDayIndex, setActiveDayIndex }) => {
-  const days = ["Day 1", "Day 2", "Day 3", "Day 4"];
+const DayPlan = ({ activeDayIndex, setActiveDayIndex, placeData }) => {
+  const totalDays = placeData ? placeData.package.total_days : 2; 
+  const days = Array.from({ length: totalDays }, (_, index) => `Day ${index + 1}`);
   const firstDays = days.slice(0, days.length - 1);
   const lastDay = days[days.length - 1];
 
   return (
-    <div className="mt-1 p-6 bg-white shadow-lg rounded-lg w-full sm:w-[17%] sticky top-[23%]">
+    <div className="mt-1 p-6 bg-white shadow-lg rounded-lg w-full sm:w-[17%] sticky top-[25%]">
       <h2 className="text-2xl font-bold mb-6 text-center text-blue-600">Day Plan</h2>
       <div className="sm:flex sm:flex-col">
         <ol className="relative border-l border-gray-300">
@@ -32,7 +33,6 @@ const DayPlan = ({ activeDayIndex, setActiveDayIndex }) => {
             ></div>
             <time className="mb-1 text-sm font-medium leading-none text-gray-600">{lastDay}</time>
           </li>
-
         </ol>
       </div>
     </div>

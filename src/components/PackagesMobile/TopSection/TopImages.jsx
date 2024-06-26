@@ -1,9 +1,22 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
 
-export default function () {
+export default function Image (props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { package: packageData } = props.placeData || {};
 
+  if (!packageData) {
+    return null;
+  }
+
+  const images = [
+    packageData.photo1,
+    packageData.photo2,
+    packageData.photo3,
+    packageData.photo4,
+    packageData.photo5,
+    packageData.photo6
+  ];
   const handleViewGallery = () => {
     setIsModalOpen(true);
   };
@@ -17,7 +30,7 @@ export default function () {
       <div className="leftSide relative flex-grow w-1/2 p-2 rounded-[20%]">
         <img
           className="w-full h-full object-cover shadow-md z-0 rounded-[5%]"
-          src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/X.jpg?downsize=645:600"
+          src={images[0] || "default_image_url"}
           alt="Srinagar Kashmir"
           onClick={handleViewGallery}
         />
@@ -32,7 +45,7 @@ export default function () {
         <div className="RightSideTop flex-grow-0 h-1/2 mb-2">
           <img
             className="w-full h-full object-cover shadow-md z-0 rounded-[5%]"
-            src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/X.jpg?downsize=645:600"
+            src={images[0] || "default_image_url"}
             alt="Srinagar Kashmir"
             onClick={handleViewGallery}
           />
@@ -41,7 +54,7 @@ export default function () {
           <div className="RightSideBottomLeft flex-grow">
             <img
               className="w-full h-full object-cover shadow-md z-0 rounded-[5%]"
-              src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/X.jpg?downsize=645:600"
+              src={images[0] || "default_image_url"}
               alt="Srinagar Kashmir"
               onClick={handleViewGallery}
             />
@@ -49,7 +62,7 @@ export default function () {
           <div className="RightSideBottomRight flex-grow">
             <img
               className="w-full h-full object-cover shadow-md z-0 rounded-[5%]"
-              src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1328/X.jpg?downsize=645:600"
+              src={images[0] || "default_image_url"}
               alt="Srinagar Kashmir"
               onClick={handleViewGallery}
             />

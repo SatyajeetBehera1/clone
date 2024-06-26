@@ -1,178 +1,242 @@
 {
-    "package": {
-        "id": 1,
-        "place_name": "puri",
-        "description": "hjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj",
-        "total_days": 4,
-        "photo1": "/package_photos/KIIT1.JPG",
-        "photo2": "/package_photos/KIIT1_gRn0Buu.JPG",
-        "photo3": "/package_photos/KIIT1_4wqtKpY.JPG",
-        "photo4": "/package_photos/KIIT1_gRsEQr4.JPG",
-        "photo5": "/package_photos/KIIT1_fZI7Zsh.JPG",
-        "photo6": "/package_photos/KIIT1_4mVM8YC.JPG",
-        "is_active": true,
-        "package_price": "5000.00"
+  "package": {
+    "id": 1,
+    "place_name": "puri",
+    "description": "fgghjklmhngfetry",
+    "total_days": 3,
+    "package_image1": "/package_images/KIIT2.png",
+    "package_image2": "/package_images/KIIT2_MhA26v4.png",
+    "package_image3": "/package_images/KIIT2_d1QQNPv.png",
+    "package_image4": "/package_images/KIIT2_OSoJsI2.png",
+    "package_image5": "/package_images/KIIT2_8p0djUY.png",
+    "package_image6": "/package_images/KIIT2_I0YxHRI.png",
+    "is_active": true,
+    "package_price": "5000.00",
+    "coupons": ["pack1"]
+  },
+  "activities": [
+    {
+      "id": 1,
+      "place": 1,
+      "activity_name": "activity 1",
+      "activity_description": "e31wdhxgcwbjkghe",
+      "is_active": true,
+      "activity_image1": "/activity_images/KIIT2.png",
+      "activity_image2": "/activity_images/KIIT2_3GbFTJ4.png",
+      "activity_image3": "/activity_images/KIIT2_nawSYww.png"
     },
-    "activities": [
+    {
+      "id": 2,
+      "place": 1,
+      "activity_name": "activity 2",
+      "activity_description": "3ghhesdxjc sn",
+      "is_active": true,
+      "activity_image1": "/activity_images/KIIT1_fCLLHSv.JPG",
+      "activity_image2": "/activity_images/KIIT1_xDTdY1B.JPG",
+      "activity_image3": "/activity_images/KIIT1_wI8cOPx.JPG"
+    }
+  ],
+  "plans": [
+    {
+      "plan": {
+        "id": 1,
+        "package": 1,
+        "day_number": 1,
+        "starting_point": "bbsr",
+        "ending_point": "puri",
+        "image": "/plan_images/KIIT1_sBi3ReU.JPG"
+      },
+      "hotels": [
         {
-            "id": 1,
-            "place": 1,
-            "activity_name": "activity 1",
-            "activity_description": "bhghjkm,nbhmn",
-            "is_active": true,
-            "activity_image1": "/activity_images/KIIT1.JPG",
-            "activity_image2": "/activity_images/KIIT1_kHwn4JU.JPG",
-            "activity_image3": "/activity_images/KIIT1_w2xtMYi.JPG"
-        },
-        {
-            "id": 2,
-            "place": 1,
-            "activity_name": "activity 2",
-            "activity_description": "vcxfdgfhnb",
-            "is_active": true,
-            "activity_image1": "/activity_images/KIIT1_uc0yf5l.JPG",
-            "activity_image2": "/activity_images/KIIT1_a0RSapq.JPG",
-            "activity_image3": "/activity_images/KIIT1_IA6UII5.JPG"
+          "id": 1,
+          "package": 1,
+          "hotel_price": "2000.00",
+          "day_number": 1,
+          "hotel_name": "hotel 1",
+          "hotel_id": "5182c7ca-95c5-4925-b66d-72f00231862a",
+          "hotel_description": "2edrchqjks",
+          "hotel_rating": "3.00",
+          "hotel_location": "near puri",
+          "is_active": true,
+          "hotel_image1": "/hotel_images/KIIT2_ivIpckm.png",
+          "hotel_image2": "/hotel_images/KIIT2_ijnGl9x.png",
+          "hotel_image3": "/hotel_images/KIIT2_7gaIqEi.png"
         }
-    ],
-    "plans": [
+      ],
+      "vehicles": [
         {
-            "plan": {
-                "id": 1,
-                "package": 1,
-                "day_number": 1,
-                "starting_point": "bbsr",
-                "ending_point": "puri",
-                "image": "/plan_images/KIIT1.JPG"
-            },
-            "hotels": [
-                {
-                    "id": 1,
-                    "package": 1,
-                    "hotel_price": "4000.00",
-                    "day_number": 1,
-                    "hotel_name": "hotel 1",
-                    "hotel_id": "2c9f94f8-de3f-4ff1-8f4e-8278d9a0e0bc",
-                    "hotel_description": "ghfyudjkh jhgdfvc",
-                    "hotel_rating": "4.00",
-                    "hotel_location": "near puri",
-                    "is_active": true,
-                    "hotel_image1": "/hotel_images/KIIT1.JPG",
-                    "hotel_image2": "/hotel_images/KIIT1_cEO2Xfv.JPG",
-                    "hotel_image3": "/hotel_images/KIIT1_lIV298R.JPG"
-                },
-                {
-                    "id": 2,
-                    "package": 1,
-                    "hotel_price": "3000.00",
-                    "day_number": 1,
-                    "hotel_name": "hotel 2",
-                    "hotel_id": "d4255171-2780-4219-9098-2b85ad9c2a0e",
-                    "hotel_description": "fvhnekjkj",
-                    "hotel_rating": "5.00",
-                    "hotel_location": "near puri",
-                    "is_active": true,
-                    "hotel_image1": "/hotel_images/KIIT1_RzbFk2j.JPG",
-                    "hotel_image2": "/hotel_images/KIIT1_Ur3ER8r.JPG",
-                    "hotel_image3": "/hotel_images/KIIT1_oeAHuzf.JPG"
-                }
-            ]
-        },
-        {
-            "plan": {
-                "id": 2,
-                "package": 1,
-                "day_number": 2,
-                "starting_point": "ctc",
-                "ending_point": "puri",
-                "image": "/plan_images/KIIT2.png"
-            },
-            "hotels": [
-                {
-                    "id": 3,
-                    "package": 1,
-                    "hotel_price": "7000.00",
-                    "day_number": 2,
-                    "hotel_name": "hotel 3",
-                    "hotel_id": "e23a96c3-41a5-40f8-a98a-1a5a11222551",
-                    "hotel_description": "xcgjfdhgv",
-                    "hotel_rating": "3.00",
-                    "hotel_location": "near puri",
-                    "is_active": true,
-                    "hotel_image1": "/hotel_images/KIIT2.png",
-                    "hotel_image2": "/hotel_images/KIIT1_8t8goHv.JPG",
-                    "hotel_image3": "/hotel_images/KIIT1_rthmVIO.JPG"
-                }
-            ]
-        },
-        {
-            "plan": {
-                "id": 3,
-                "package": 1,
-                "day_number": 3,
-                "starting_point": "chandanpur",
-                "ending_point": "puri",
-                "image": "/plan_images/KIIT1_UVIMlLk.JPG"
-            },
-            "hotels": [
-                {
-                    "id": 4,
-                    "package": 1,
-                    "hotel_price": "3000.00",
-                    "day_number": 3,
-                    "hotel_name": "hotel4",
-                    "hotel_id": "f4bbcf4c-4e98-43e9-ad0b-d83bc58307f3",
-                    "hotel_description": "dstyhkjl,m.nmmnbhgj",
-                    "hotel_rating": "3.00",
-                    "hotel_location": "near puri",
-                    "is_active": true,
-                    "hotel_image1": "/hotel_images/KIIT1_kX4Ml1z.JPG",
-                    "hotel_image2": "/hotel_images/KIIT1_yqCIes8.JPG",
-                    "hotel_image3": "/hotel_images/KIIT1_5cnlTKR.JPG"
-                },
-                {
-                    "id": 6,
-                    "package": 1,
-                    "hotel_price": "5000.00",
-                    "day_number": 3,
-                    "hotel_name": "hotel 6",
-                    "hotel_id": "c7d55030-8162-495a-b0c2-e3439c1a4732",
-                    "hotel_description": "gfdfgrthjyjkl,mn",
-                    "hotel_rating": "4.50",
-                    "hotel_location": "near puri",
-                    "is_active": true,
-                    "hotel_image1": "/hotel_images/KIIT1_WE0vmFO.JPG",
-                    "hotel_image2": "/hotel_images/KIIT1_2MCGr1Y.JPG",
-                    "hotel_image3": "/hotel_images/KIIT1_frH5KRI.JPG"
-                }
-            ]
-        },
-        {
-            "plan": {
-                "id": 4,
-                "package": 1,
-                "day_number": 4,
-                "starting_point": "sakhigopal",
-                "ending_point": "puri",
-                "image": "/plan_images/KIIT2_nXCVRRV.png"
-            },
-            "hotels": [
-                {
-                    "id": 5,
-                    "package": 1,
-                    "hotel_price": "9000.00",
-                    "day_number": 4,
-                    "hotel_name": "hotel 5",
-                    "hotel_id": "fa8ccd62-dc0f-4ce3-a5df-209370ce3676",
-                    "hotel_description": "fdshjhkmnbghj",
-                    "hotel_rating": "4.60",
-                    "hotel_location": "near puri",
-                    "is_active": true,
-                    "hotel_image1": "/hotel_images/KIIT1_VOJc1f3.JPG",
-                    "hotel_image2": "/hotel_images/KIIT1_tjBTaHA.JPG",
-                    "hotel_image3": "/hotel_images/KIIT1_xS41ioG.JPG"
-                }
-            ]
+          "id": 1,
+          "package": 1,
+          "day_number": 1,
+          "car_name": "innova",
+          "car_colour": "black",
+          "driver_name": "sibu",
+          "driver_number": "9178263098",
+          "is_private": true,
+          "car_number": "od02ct4937",
+          "car_description": "ehgdwhkjxcwhd",
+          "luggage_bags": 4,
+          "car_photo": "/car_photos/KIIT2.png",
+          "price_per_hour": "13.00",
+          "ac": true,
+          "side_seen_included": true,
+          "is_active": true,
+          "seats": 7,
+          "first_aid": true,
+          "available_location": "bbsr",
+          "created_at": "2024-06-25T10:09:10.922520Z",
+          "added_by": "jd",
+          "owner_name": "sibu"
         }
-    ]
+      ],
+      "itineraries": [
+        {
+          "id": 1,
+          "plan": 1,
+          "subplace_name": "sakhigopal",
+          "total_sightseeing_places": 5,
+          "distance_between_subplaces": "1000.00",
+          "time_taken_between_subplaces": "00:00:02",
+          "sightseeing_places": []
+        }
+      ]
+    },
+    {
+      "plan": {
+        "id": 2,
+        "package": 1,
+        "day_number": 2,
+        "starting_point": "chandanpur",
+        "ending_point": "puri",
+        "image": "/plan_images/KIIT1_Za7oAVp.JPG"
+      },
+      "hotels": [
+        {
+          "id": 2,
+          "package": 1,
+          "hotel_price": "3000.00",
+          "day_number": 2,
+          "hotel_name": "hotel 2",
+          "hotel_id": "9e5aa3df-d67d-402e-a1bd-6cd14c7f4871",
+          "hotel_description": "ehjgdhjkc",
+          "hotel_rating": "3.00",
+          "hotel_location": "near puri",
+          "is_active": true,
+          "hotel_image1": "/hotel_images/KIIT2_LLgPpj1.png",
+          "hotel_image2": "/hotel_images/KIIT2_1jdCA3A.png",
+          "hotel_image3": "/hotel_images/KIIT2_7D3oRwP.png"
+        }
+      ],
+      "vehicles": [
+        {
+          "id": 2,
+          "package": 1,
+          "day_number": 2,
+          "car_name": "innova",
+          "car_colour": "black",
+          "driver_name": "sibu",
+          "driver_number": "9178263098",
+          "is_private": true,
+          "car_number": "od02ct4937",
+          "car_description": "sertyuikjl,mn",
+          "luggage_bags": 4,
+          "car_photo": "/car_photos/KIIT2_sPbRnFr.png",
+          "price_per_hour": "15.00",
+          "ac": true,
+          "side_seen_included": true,
+          "is_active": true,
+          "seats": 4,
+          "first_aid": true,
+          "available_location": "bbsr",
+          "created_at": "2024-06-25T10:42:57.428876Z",
+          "added_by": "jd",
+          "owner_name": "sibu"
+        }
+      ],
+      "itineraries": [
+        {
+          "id": 2,
+          "plan": 2,
+          "subplace_name": "chandanpur",
+          "total_sightseeing_places": 1,
+          "distance_between_subplaces": "100.00",
+          "time_taken_between_subplaces": "00:00:02",
+          "sightseeing_places": []
+        }
+      ]
+    },
+    {
+      "plan": {
+        "id": 3,
+        "package": 1,
+        "day_number": 3,
+        "starting_point": "sakhigopal",
+        "ending_point": "puri",
+        "image": "/plan_images/KIIT2_o43bAHG.png"
+      },
+      "hotels": [
+        {
+          "id": 3,
+          "package": 1,
+          "hotel_price": "2500.00",
+          "day_number": 3,
+          "hotel_name": "hotel 3",
+          "hotel_id": "a475a04f-eae8-4bde-87e0-d2528c6fe094",
+          "hotel_description": "hgdchsxjk",
+          "hotel_rating": "3.00",
+          "hotel_location": "near puri",
+          "is_active": true,
+          "hotel_image1": "/hotel_images/KIIT2_qiD34FV.png",
+          "hotel_image2": "/hotel_images/KIIT2_KvcPsFf.png",
+          "hotel_image3": "/hotel_images/KIIT2_dqbPdeA.png"
+        }
+      ],
+      "vehicles": [
+        {
+          "id": 3,
+          "package": 1,
+          "day_number": 3,
+          "car_name": "innova",
+          "car_colour": "black",
+          "driver_name": "sibu",
+          "driver_number": "9178263098",
+          "is_private": true,
+          "car_number": "od02ct4937",
+          "car_description": "eretyuikhg",
+          "luggage_bags": 5,
+          "car_photo": null,
+          "price_per_hour": "18.00",
+          "ac": true,
+          "side_seen_included": true,
+          "is_active": true,
+          "seats": 1,
+          "first_aid": true,
+          "available_location": "bbsr",
+          "created_at": "2024-06-25T10:44:11.560950Z",
+          "added_by": "jd",
+          "owner_name": "sibu"
+        }
+      ],
+      "itineraries": [
+        {
+          "id": 3,
+          "plan": 3,
+          "subplace_name": "sakhigopal",
+          "total_sightseeing_places": 3,
+          "distance_between_subplaces": "14.00",
+          "time_taken_between_subplaces": "00:06:40",
+          "sightseeing_places": []
+        }
+      ]
+    }
+  ],
+  "coupons": [
+    {
+      "id": 1,
+      "coupon_name": "pack1",
+      "coupon_description": "ehgwftui1kgshx",
+      "coupon_price": "1000.00",
+      "is_active": true
+    }
+  ]
 }

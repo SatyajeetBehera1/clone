@@ -3,7 +3,7 @@ import Accordion from "./Accordion";
 import DayPlan from "./DayPlan";
 
 const Parent = (props) => {
-  const { activeSection } = props;
+  const { activeSection, placeData } = props;
   const [activeDayIndex, setActiveDayIndex] = useState(null);
 
   const handleActiveSectionChange = (sectionName) => {
@@ -12,20 +12,22 @@ const Parent = (props) => {
 
   useEffect(() => {
     if (activeSection === "DAY PLAN") {
-      setActiveDayIndex(0);
+      setActiveDayIndex(0); 
     } else {
-      setActiveDayIndex(null);
+      setActiveDayIndex(null); 
     }
-  }, [activeSection]);
+  }, [activeSection]); 
 
   return (
-    <div className="">
-      <DayPlan activeDayIndex={activeDayIndex} setActiveDayIndex={setActiveDayIndex} />
+    <div className="sticky top-[25%]">
+      <DayPlan activeDayIndex={activeDayIndex} setActiveDayIndex={setActiveDayIndex} placeData={placeData} />
+
       <Accordion
         activeDayIndex={activeDayIndex}
         setActiveDayIndex={setActiveDayIndex}
         activeSection={activeSection}
         onActiveSectionChange={handleActiveSectionChange}
+        placeData={placeData}
       />
     </div>
   );

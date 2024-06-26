@@ -1,64 +1,155 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-export default function Delightful() {
+const CouponsAndPricing = (props) => {
+  const { placeData } = props;
+  const basePrice = placeData ? parseFloat(placeData.package.package_price) : 500;
+
+  const [selectedCoupon, setSelectedCoupon] = useState("");
+  const [discount, setDiscount] = useState(0);
+  const [appliedCoupon, setAppliedCoupon] = useState("");
+  const [applyCount, setApplyCount] = useState(0);
+  const [message, setMessage] = useState("");
+  const [finalPrice, setFinalPrice] = useState(basePrice);
+
+  const coupons = {
+    AIRDROP: 500,
+    MMTRBLFEST: 500,
+    FEDERALEMI: 500,
+    MMTHOLIDAY: 500,
+  };
+
+  useEffect(() => {
+    if (!selectedCoupon) {
+      setMessage("");
+    }
+  }, [selectedCoupon]);
+
+  useEffect(() => {
+    setFinalPrice(basePrice - discount);
+  }, [basePrice, discount]);
+
+  const handleApplyCoupon = () => {
+    if (!selectedCoupon) {
+      setMessage("Please enter a coupon code.");
+      return;
+    }
+    const coupon = selectedCoupon.toUpperCase();
+    const discountValue = coupons[coupon] || 0;
+
+    if (discountValue > 0) {
+      if (coupon !== appliedCoupon) {
+        setDiscount(discountValue);
+        setAppliedCoupon(coupon);
+        setApplyCount(applyCount + 1);
+        setMessage("Coupon applied successfully!");
+      } else {
+        setMessage("Coupon is already applied.");
+      }
+    } else {
+      setMessage("Invalid coupon code.");
+    }
+  };
+
+  const handleRemoveCoupon = () => {
+    setSelectedCoupon("");
+    setDiscount(0);
+    setAppliedCoupon("");
+    setMessage("");
+    setFinalPrice(basePrice);
+  };
+
   return (
-    <div className="container p-1 bg-white text-gray-800 rounded-md sticky top-0 z-20">
-      <div className="ml-[8%]">
-        <h2 className="font-bold text-xl mb-4">Delightful Kashmir Holiday</h2>
-        <div className="p-1 mt-[-10px]">
-          <div className="sm:flex sm:flex-row items-center hidden sm:block"> {/* Adjusted flex classes */}
-            <div className="flex items-center mb-2 sm:mb-0"> {/* Wrapped "Customizable" and "6N/7D" in a div */}
-              <p className="text-xs text-gray-600 border border-black border-solid rounded-xl mr-4 sm:w-[7%] w-full text-center">
-                Customizable
-              </p>
-              <p className="text-xs text-gray-600 border border-black border-solid rounded-xl mr-4 sm:w-[4%] w-full text-center">
-                6N/7D
-              </p>
-            </div>
-            <p className="text-base font-bold">
-              1N Srinagar • 1N Gulmarg • 2N Pahalgam • 2N Srinagar
+    <div>
+      {/* Pricing Section */}
+      <div className="p-4 border bg-white border-gray-300 rounded-lg shadow-md w-full sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-[90%] sticky top-[10%] z-40">
+        <div className="mb-6">
+          <div className="flex items-center justify-between">
+            <p className="text-sm font-bold text-gray-500 line-through">
+              ₹54,596
             </p>
+            <p className="text-sm text-red-500 ml-2">15% OFF</p>
           </div>
-          <div className="flex flex-row items-center">
-            <p className="text-xs text-gray-600 border border-black border-solid rounded-xl mr-4 w-[7%] text-center">
-              Customizable
+          <div className="flex items-center mt-4">
+            <p className="text-xl font-bold text-gray-800">₹{finalPrice}</p>
+            <p className="text-sm font-bold text-gray-800 ml-2 mt-1.5">/Adult</p>
+          </div>
+          <div className="mt-2">
+            <p className="text-sm text-gray-500">Excluding applicable taxes</p>
+          </div>
+        </div>
+        <div className="flex justify-center mb-6">
+          <button className="w-full sm:w-4/5 rounded-md bg-blue-500 text-white h-10 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+            PROCEED TO PAYMENT
+          </button>
+        </div>
+      </div>
+
+      {/* Coupons Section */}
+      <div className="mt-2 p-4 border bg-white border-gray-300 rounded-lg shadow-md w-full sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-[90%]">
+        <div className="text-xl font-semibold mb-6 text-center">Coupons & Offers</div>
+        <div className="w-full mb-6 flex items-center bg-gray-100 rounded-lg shadow-inner p-3">
+          <div className="text-xs bg-sky-700 text-white rounded-full w-10 h-7 flex items-center justify-center">EMI</div>
+          <div className="ml-4">
+            <div className="text-sm text-gray-700 font-medium">No cost EMI @ ₹15,495</div>
+            <div className="text-xs text-gray-600">Book your holidays with Easy EMI options.</div>
+          </div>
+        </div>
+
+        <div className="mb-6 flex flex-col sm:flex-row items-center justify-center">
+          <input
+            type="text"
+            placeholder="Enter Code"
+            className="bg-blue-50 border text-gray-900 text-sm rounded-lg border-blue-400 focus:ring-blue-500 focus:border-blue-500 block w-[90%] sm:w-auto p-2.5 placeholder-gray-500 outline-none"
+            value={selectedCoupon}
+            onChange={(e) => setSelectedCoupon(e.target.value)}
+          />
+          {appliedCoupon ? (
+            <button className="mt-2 sm:mt-0 sm:ml-2 bg-red-500 text-white px-3 py-2 rounded-lg" onClick={handleRemoveCoupon}>
+              Remove
+            </button>
+          ) : (
+            <button className="mt-2 sm:mt-0 sm:ml-2 bg-blue-500 text-white px-3 py-2 rounded-lg" onClick={handleApplyCoupon}>
+              Apply
+            </button>
+          )}
+        </div>
+
+        {message && <div className="mb-4 text-center text-red-500">{message}</div>}
+
+        {discount > 0 && (
+          <div className="mb-4 text-center text-green-500">Discount Applied: ₹{discount}</div>
+        )}
+
+        <div className="mb-4 border-2 rounded-lg border-blue-500 p-2 shadow-inner">
+          <div className="flex justify-between">
+            <h4 className="font-medium text-gray-800 text-sm">FEDERALEMI</h4>
+            <p className="text-green-700 font-bold">- ₹9,232</p>
+          </div>
+          <div className="flex justify-between items-center">
+            <p className="text-xs text-gray-600 w-3/4">
+              Enjoy additional discount on federal international EMI transactions.
             </p>
-            <p className="text-xs text-gray-600 border border-black border-solid rounded-xl mr-4 w-[4%] text-center">
-              6N/7D
-            </p>
-            <p className="text-base font-bold">
-              1N Srinagar • 1N Gulmarg • 2N Pahalgam • 2N Srinagar
-            </p>
+            <button onClick={() => setSelectedCoupon("FEDERALEMI")} className="text-blue-500 text-sm">
+              Apply
+            </button>
+          </div>
+        </div>
+
+        <div className="mb-4 border-2 rounded-lg border-blue-500 p-2 shadow-inner">
+          <div className="flex justify-between">
+            <h4 className="font-medium text-gray-800 text-sm">MMTHOLIDAY</h4>
+            <p className="text-green-700 font-bold">- ₹9,827</p>
+          </div>
+          <div className="flex justify-between items-center">
+            <p className="text-xs text-gray-600 w-3/4">Grab Up to 30% Off* with Citibank Credit & Debit Cards</p>
+            <button onClick={() => setSelectedCoupon("MMTHOLIDAY")} className="text-blue-500 text-sm">
+              Apply
+            </button>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
-
-
-import React from "react";
-
-export default function Delightful() {
-  return (
-    <div className="container p-1 bg-white text-gray-800 rounded-md  sticky top-0 z-20">
-      <div className="ml-[8%]">
-        <h2 className="font-bold text-xl mb-4">Delightful Kashmir Holiday</h2>
-        <div className="p-1 mt-[-10px]">
-          <div className="flex flex-row items-center">
-            <p className="text-xs text-gray-600 border border-black border-solid rounded-xl mr-4 w-[7%] text-center">
-              Customizable
-            </p>
-            <p className="text-xs text-gray-600 border border-black border-solid rounded-xl mr-4 w-[4%] text-center">
-              6N/7D
-            </p>
-            <p className="text-base font-bold">
-              1N Srinagar • 1N Gulmarg • 2N Pahalgam • 2N Srinagar
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+export default CouponsAndPricing;
